@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiExternalLink, FiGithub, FiCalendar, FiUsers, FiTarget, FiTrendingUp, FiCode, FiDatabase, FiShield, FiSmartphone } from 'react-icons/fi';
+import { FiExternalLink, FiGithub, FiCalendar, FiUsers, FiTarget, FiTrendingUp, FiCode, FiSmartphone } from 'react-icons/fi';
 import PDFViewer from './PDFViewer';
 
 const CaseStudy = () => {
