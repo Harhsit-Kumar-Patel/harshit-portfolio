@@ -22,7 +22,7 @@ const Projects = () => {
         "Fully responsive design for all devices"
       ],
       github: "https://github.com/harshit-patel/pathbyte",
-      demo: "https://pathbyte-demo.com"
+      demo: "https://pathbyte.netlify.app"
     }
   ];
 
