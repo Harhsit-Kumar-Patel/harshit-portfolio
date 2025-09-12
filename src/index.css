@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    @apply text-slate-500 dark:text-slate-300 bg-slate-50 dark:bg-slate-900 transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply text-slate-600 dark:text-slate-200 font-bold;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-slate-900/20 backdrop-blur-md border border-slate-700/30;
+  }
+  
+  .gradient-text {
+    @apply text-slate-600 dark:text-slate-300;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(-45deg, #ec4899, #8b5cf6, #3B82F6, #06B6D4);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+  
+  .glass-card {
+    @apply bg-slate-100/80 dark:bg-slate-900/5 backdrop-blur-lg border border-slate-200/50 dark:border-slate-700/20 rounded-2xl;
+  }
+  
+  .glass-card-hover {
+    @apply hover:bg-slate-100 dark:hover:bg-slate-900/10 hover:border-slate-300/70 dark:hover:border-slate-700/30 transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-primary-600 hover:to-primary-700 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-600 text-white px-6 py-3 rounded-xl font-semibold hover:from-secondary-600 hover:to-secondary-700 transition-all duration-300 hover:shadow-lg hover:shadow-secondary-500/25 hover:scale-105;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .section-padding {
+    @apply py-20 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+}
