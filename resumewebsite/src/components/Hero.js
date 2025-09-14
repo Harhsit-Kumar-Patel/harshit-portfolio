@@ -92,7 +92,7 @@ const Hero = () => {
               Harshit Kumar Patel
             </h1>
             <h2 className="text-2xl md:text-3xl font-medium gradient-text">
-              Software Engineer / Product Manager
+              Aspiring Product Manager
             </h2>
             <div className="flex items-center justify-center space-x-2 text-slate-400 dark:text-slate-300">
               <FiMapPin className="w-5 h-5" />
