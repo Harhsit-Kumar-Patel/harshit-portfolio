@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FiExternalLink, FiGithub, FiCalendar, FiUsers, FiBookOpen } from 'react-icons/fi';
+import PDFViewer from './PDFViewer';
 
 const CaseStudy = () => {
   const ref = useRef(null);
@@ -110,6 +111,28 @@ const CaseStudy = () => {
               </ul>
             </div>
           </div>
+        </motion.div>
+
+        {/* PDF Document Section */}
+        <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="glass dark:glass-dark p-8 rounded-3xl shadow-xl mt-12"
+        >
+            <div className="text-center">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                    Complete Case Study Document
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                    View the comprehensive case study document with detailed analysis, research findings,
+                    technical implementation, and project outcomes.
+                </p>
+                <PDFViewer
+                    pdfPath="/PathByte-CaseStudyReport.pdf"
+                    title="PathByte Case Study Report"
+                />
+            </div>
         </motion.div>
       </div>
     </section>
