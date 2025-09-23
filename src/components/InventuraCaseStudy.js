@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiExternalLink, FiGithub, FiZap, FiUsers, FiBarChart2, FiCpu, FiMessageCircle, FiEdit, FiPackage, FiAward } from 'react-icons/fi';
+import { FiExternalLink, FiGithub, FiUsers, FiBarChart2, FiMessageCircle, FiEdit, FiAward } from 'react-icons/fi';
 
 const InventuraCaseStudy = () => {
   const ref = useRef(null);
@@ -103,7 +103,7 @@ const InventuraCaseStudy = () => {
                     </p>
                     <div className="flex flex-wrap gap-4">
                         <motion.a
-                        href="https://github.com/Harhsit-Kumar-Patel/Inventura-CaseStudy" // Replace with your actual GitHub link
+                        href="https://github.com/your-repo/inventura" // Replace with your actual GitHub link
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center space-x-2 bg-gray-800 dark:bg-gray-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200"
