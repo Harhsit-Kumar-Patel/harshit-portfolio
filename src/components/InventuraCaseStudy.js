@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiExternalLink, FiGithub, FiUsers, FiBarChart2, FiMessageCircle, FiEdit, FiAward, FiCalendar } from 'react-icons/fi';
+import { FiExternalLink, FiGithub, FiUsers, FiBarChart2, FiMessageCircle, FiAward, FiCalendar } from 'react-icons/fi';
 
 const InventuraCaseStudy = () => {
   const ref = useRef(null);
