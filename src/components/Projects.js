@@ -26,20 +26,41 @@ const Projects = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
   return (
     <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             Featured Projects
@@ -47,20 +68,23 @@ const Projects = () => {
           <motion.p
             className="text-xl text-gray-600 dark:text-gray-300"
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             Innovative solutions that make a difference
           </motion.p>
         </motion.div>
 
-        <div className="space-y-12">
+        <motion.div
+          className="space-y-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+        >
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-              transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
+              variants={itemVariants}
               className="glass dark:glass-dark p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300"
             >
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
@@ -80,7 +104,6 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Technologies */}
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
                   Technologies Used:
@@ -90,10 +113,7 @@ const Projects = () => {
                     <motion.span
                       key={idx}
                       className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                      transition={{ duration: 0.4, delay: 0.8 + index * 0.2 + idx * 0.1 }}
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ y: -2, transition: { duration: 0.2 } }}
                     >
                       {tech}
                     </motion.span>
@@ -101,28 +121,23 @@ const Projects = () => {
                 </div>
               </div>
 
-              {/* Key Features */}
               <div className="mb-6">
                 <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
                   Key Features:
                 </h4>
                 <ul className="space-y-2">
                   {project.features.map((feature, idx) => (
-                    <motion.li
+                    <li
                       key={idx}
                       className="flex items-start space-x-3 text-gray-700 dark:text-gray-300"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-                      transition={{ duration: 0.4, delay: 0.8 + index * 0.2 + idx * 0.1 }}
                     >
                       <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
                       <span>{feature}</span>
-                    </motion.li>
+                    </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Action Buttons */}
               <div className="flex flex-wrap gap-4">
                 <motion.a
                   href={project.github}
@@ -149,7 +164,7 @@ const Projects = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
