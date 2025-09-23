@@ -2,66 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiExternalLink, FiGithub, FiUsers, FiBarChart2, FiMessageCircle, FiAward, FiCalendar, FiBookOpen } from 'react-icons/fi';
+import { FiGithub, FiUsers, FiCalendar, FiBookOpen } from 'react-icons/fi';
 
 const InventuraCaseStudy = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const challenges = [
-    "Existing systems are too complex or expensive for small vendors.",
-    "Many vendors lack trust in software and have low digital literacy.",
-    "Inefficient supplier-vendor collaboration leads to wastage and losses.",
-    "Current tools only track data; they don't offer business advice."
-  ];
-
-  const solutions = [
-    {
-      title: "AI Demand Forecasting",
-      description: "Predict what stock will run out to optimize purchasing.",
-      icon: <FiBarChart2 className="w-6 h-6" />
-    },
-    {
-      title: "Community Stock Exchange",
-      description: "Share or sell excess stock to nearby vendors to reduce waste.",
-      icon: <FiUsers className="w-6 h-6" />
-    },
-    {
-      title: "Voice & WhatsApp Commands",
-      description: "Update stock and request reports using natural language.",
-      icon: <FiMessageCircle className="w-6 h-6" />
-    },
-    {
-        title: "Sustainability Tracker",
-        description: "Reduce waste, donate items, and earn eco-badges.",
-        icon: <FiAward className="w-6 h-6" />
-    }
-  ];
-
-  const techStack = [
-    { category: "Frontend", techs: ["React (Web)", "Flutter (Mobile)"] },
-    { category: "Backend", techs: ["Node.js (Express)", "Django REST"] },
-    { category: "Database", techs: ["PostgreSQL", "Redis", "ElasticSearch"] },
-    { category: "AI/ML & Integrations", techs: ["Python (TensorFlow)", "WhatsApp API"] }
-  ];
-
-  const results = [
-    {
-      metric: "60-70%",
-      label: "Time Saved",
-      description: "Expected reduction in time spent on daily stock updates."
-    },
-    {
-      metric: "Up to 80%",
-      label: "Reduced Mismatches",
-      description: "Projected decrease in stock mismatches from manual errors."
-    },
-    {
-      metric: "20-30%",
-      label: "Wastage Reduction",
-      description: "Anticipated reduction in waste for perishable goods."
-    }
-  ];
 
   const sectionVariants = {
       hidden: { opacity: 0, y: 50 },

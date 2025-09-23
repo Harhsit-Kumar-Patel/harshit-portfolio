@@ -2,68 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiExternalLink, FiGithub, FiCalendar, FiUsers, FiTarget, FiTrendingUp, FiCode, FiSmartphone, FiBookOpen } from 'react-icons/fi';
-import PDFViewer from './PDFViewer';
+import { FiExternalLink, FiGithub, FiCalendar, FiUsers, FiBookOpen } from 'react-icons/fi';
 
 const CaseStudy = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const challenges = [
-    "Fragmentation of resources across scattered blogs, videos, and courses",
-    "Lack of clarity in mapping out the journey to achieve career goals",
-    "Wasted time switching between different platforms causing confusion",
-    "Students spend 30-40% of their time just searching for roadmaps and resources"
-  ];
-
-  const solutions = [
-    {
-      title: "Role-based Roadmaps",
-      description: "Step-by-step guides for careers such as SDE and Data Analyst",
-      icon: <FiTarget className="w-6 h-6" />
-    },
-    {
-      title: "Curated Content",
-      description: "A mix of free and paid resources in one centralized location",
-      icon: <FiCode className="w-6 h-6" />
-    },
-    {
-      title: "Search & Filters",
-      description: "Quick access to role-specific material with intelligent filtering",
-      icon: <FiTrendingUp className="w-6 h-6" />
-    },
-    {
-      title: "Minimal UI",
-      description: "Clean design with no distractions to keep users focused",
-      icon: <FiSmartphone className="w-6 h-6" />
-    }
-  ];
-
-  const techStack = [
-    { category: "Frontend", techs: ["React 18", "TypeScript", "Tailwind CSS", "Framer Motion"] },
-    { category: "Backend", techs: ["Node.js", "Express", "PostgreSQL", "Knex.js"] },
-    { category: "Infrastructure", techs: ["Docker", "Netlify", "Railway"] },
-    { category: "Features", techs: ["Smart Onboarding", "Progress Tracking", "Community Integration"] }
-  ];
-
-  const results = [
-    {
-      metric: "30-40%",
-      label: "Time Saved",
-      description: "Reduced time spent searching for resources and roadmaps"
-    },
-    {
-      metric: "100%",
-      label: "User Satisfaction",
-      description: "Positive feedback on ease of use and reduced overwhelm"
-    },
-    {
-      metric: "Organic",
-      label: "Community Growth",
-      description: "Natural sharing and adoption within peer groups"
-    }
-  ];
-
 
   return (
     <section id="case-study" className="py-20 bg-white dark:bg-gray-800">
@@ -71,32 +14,22 @@ const CaseStudy = () => {
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Case Study: PathByte
-          </motion.h2>
-          <motion.p
-            className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            An AI-powered career roadmap platform that revolutionizes how developers navigate their tech journey
-          </motion.p>
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            An AI-powered career roadmap platform that revolutionizes how developers navigate their tech journey.
+          </p>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="glass dark:glass-dark p-8 rounded-3xl shadow-xl mb-12"
         >
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -105,9 +38,7 @@ const CaseStudy = () => {
                 Project Overview
               </h3>
               <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                PathByte is a web platform designed to help students prepare for tech-job roles through structured
-                roadmaps and resources. It simplifies career preparation by providing role-based learning paths,
-                curated content, and a minimal UI that keeps users focused on their goals.
+                PathByte is a web platform designed to help students prepare for tech-job roles through structured roadmaps and resources. It simplifies career preparation by providing role-based learning paths, curated content, and a minimal UI that keeps users focused on their goals.
               </p>
               <div className="flex items-center space-x-4 mb-6">
                 <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
