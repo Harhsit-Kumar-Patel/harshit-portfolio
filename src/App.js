@@ -1,7 +1,6 @@
 import React from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-// import Summary from './components/Summary'; // This line is removed
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import CaseStudy from './components/CaseStudy';
@@ -20,7 +19,6 @@ function App() {
         <Navigation />
         <main>
           <Hero />
-          {/* <Summary /> */} {/* This line is removed */}
           <Experience />
           <Projects />
           <CaseStudy />

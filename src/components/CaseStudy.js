@@ -2,8 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiExternalLink, FiGithub, FiCalendar, FiUsers, FiBookOpen } from 'react-icons/fi';
-import PDFViewer from './PDFViewer';
+import { FiExternalLink, FiGithub, FiCalendar, FiUsers, FiBookOpen, FiEye } from 'react-icons/fi';
 
 const CaseStudy = () => {
   const ref = useRef(null);
@@ -128,10 +127,17 @@ const CaseStudy = () => {
                     View the comprehensive case study document with detailed analysis, research findings,
                     technical implementation, and project outcomes.
                 </p>
-                <PDFViewer
-                    pdfPath="/PathByte-CaseStudyReport.pdf"
-                    title="PathByte Case Study Report"
-                />
+                <motion.a
+                    href="/PathByte-CaseStudyReport.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-200"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                >
+                    <FiEye className="w-5 h-5" />
+                    <span>View Full Report</span>
+                </motion.a>
             </div>
         </motion.div>
       </div>
