@@ -2,35 +2,25 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi';
+import { FiCalendar, FiMapPin, FiUsers } from 'react-icons/fi';
 
 const Experience = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  // Restored original experience data
   const experiences = [
     {
-      role: "Full Stack Engineer",
-      company: "Innovate Solutions",
-      period: "Jan 2024 – Present",
-      location: "San Francisco, CA",
-      description: "Developed and maintained scalable web applications using React, Node.js, and PostgreSQL. Led the design and implementation of a new microservices-based architecture, improving system performance by 30%.",
+      title: "Computer Faculty",
+      company: "Sant Sai Shikshan Sansthan",
+      location: "Varanasi",
+      period: "Jul 2025",
       responsibilities: [
-        "Collaborated with cross-functional teams to deliver high-quality software solutions.",
-        "Implemented RESTful APIs and integrated with third-party services.",
-        "Mentored junior developers and conducted code reviews."
-      ]
-    },
-    {
-      role: "Frontend Developer",
-      company: "Tech Forward Inc.",
-      period: "June 2022 – Dec 2023",
-      location: "Austin, TX",
-      description: "Focused on building responsive and interactive user interfaces for client-facing applications using modern JavaScript frameworks. Optimized application performance, reducing load times by 20%.",
-      responsibilities: [
-        "Translated UI/UX designs into high-quality code.",
-        "Ensured the technical feasibility of UI/UX designs.",
-        "Worked closely with product managers to define feature requirements."
+        "Developed comprehensive lesson plans for computer science curriculum",
+        "Provided one-on-one support to students for better understanding",
+        "Created engaging activities to enhance learning experience",
+        "Organized and maintained classroom resources and materials",
+        "Conducted regular student assessments and progress tracking"
       ]
     }
   ];
@@ -70,12 +60,12 @@ const Experience = () => {
             Professional Experience
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            My journey in the world of technology
+            Building impactful solutions and leading teams
           </p>
         </motion.div>
 
         <motion.div
-          className="space-y-12"
+          className="space-y-8"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
@@ -84,41 +74,42 @@ const Experience = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="glass dark:glass-dark p-8 rounded-3xl shadow-xl"
+              className="glass dark:glass-dark p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300"
             >
-              <div className="flex flex-col md:flex-row md:items-start md:space-x-8">
-                <div className="flex-shrink-0 mb-4 md:mb-0">
-                  <FiBriefcase className="w-12 h-12 text-primary-500" />
-                </div>
-                <div className="flex-1">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                <div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    {exp.role}
+                    {exp.title}
                   </h3>
-                  <p className="text-lg font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                    {exp.company}
-                  </p>
-                  <div className="flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400 mb-4">
-                    <div className="flex items-center mr-4">
-                      <FiCalendar className="w-4 h-4 mr-2" />
-                      <span>{exp.period}</span>
+                  <div className="flex items-center space-x-4 text-gray-600 dark:text-gray-300">
+                    <div className="flex items-center space-x-1">
+                      <FiUsers className="w-4 h-4" />
+                      <span className="font-semibold">{exp.company}</span>
                     </div>
-                    <div className="flex items-center">
-                      <FiMapPin className="w-4 h-4 mr-2" />
+                    <div className="flex items-center space-x-1">
+                      <FiMapPin className="w-4 h-4" />
                       <span>{exp.location}</span>
                     </div>
+                    <div className="flex items-center space-x-1">
+                      <FiCalendar className="w-4 h-4" />
+                      <span>{exp.period}</span>
+                    </div>
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">
-                    {exp.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {exp.responsibilities.map((resp, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        <span className="text-gray-700 dark:text-gray-300">{resp}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
+                  Key Responsibilities:
+                </h4>
+                <ul className="space-y-2">
+                  {exp.responsibilities.map((responsibility, idx) => (
+                    <li key={idx} className="flex items-start space-x-3 text-gray-700 dark:text-gray-300">
+                      <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>{responsibility}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </motion.div>
           ))}
