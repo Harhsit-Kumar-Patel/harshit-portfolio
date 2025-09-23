@@ -8,7 +8,6 @@ const Experience = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Restored original experience data
   const experiences = [
     {
       title: "Computer Faculty",

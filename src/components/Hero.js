@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const Hero = () => {
     const containerVariants = {
@@ -36,17 +36,14 @@ const Hero = () => {
                     Harshit Kumar Patel
                 </motion.h1>
                 <motion.p variants={itemVariants} className="text-2xl md:text-3xl text-primary-500 dark:text-primary-400 font-semibold mb-8">
-                    Full Stack Engineer
+                    Aspiring Product Manager
                 </motion.p>
                 <motion.div variants={itemVariants} className="flex justify-center space-x-6">
                     <a href="https://github.com/Harhsit-Kumar-Patel" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
                         <FiGithub className="w-8 h-8" />
                     </a>
-                    <a href="https://www.linkedin.com/in/harshit-kumar-patel-94883522a/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
+                    <a href="https://www.linkedin.com/in/harshit-patel-900729205/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
                         <FiLinkedin className="w-8 h-8" />
-                    </a>
-                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-primary-500 dark:hover:text-primary-400 transition-colors">
-                        <FiTwitter className="w-8 h-8" />
                     </a>
                 </motion.div>
             </motion.div>

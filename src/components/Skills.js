@@ -8,7 +8,6 @@ const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Restored original skills data
   const professionalSkills = [
     { name: "Product Strategy", icon: FiTarget },
     { name: "Market Research", icon: FiTrendingUp },
