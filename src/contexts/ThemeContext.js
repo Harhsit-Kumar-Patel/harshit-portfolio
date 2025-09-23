@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-export const ThemeContext = createContext(); // This line is now exported
+export const ThemeContext = createContext(); // Exporting the context
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
@@ -13,7 +13,6 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('theme');
-    // Ensure the saved value is treated as a boolean, not a string
     return saved ? JSON.parse(saved) : false;
   });
 

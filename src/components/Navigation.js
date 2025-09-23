@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useTheme } from '../contexts/ThemeContext'; // Correctly import the custom hook
+import { useTheme } from '../contexts/ThemeContext';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const { theme } = useTheme(); // Use the custom hook to get the context value
+    const { theme } = useTheme();
 
     const links = [
         { name: 'Home', href: '#home' },
