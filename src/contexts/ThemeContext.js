@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const ThemeContext = createContext();
+export const ThemeContext = createContext(); // This line is now exported
 
 export const useTheme = () => {
   const context = useContext(ThemeContext);
@@ -13,6 +13,7 @@ export const useTheme = () => {
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('theme');
+    // Ensure the saved value is treated as a boolean, not a string
     return saved ? JSON.parse(saved) : false;
   });
 
@@ -26,11 +27,11 @@ export const ThemeProvider = ({ children }) => {
   }, [isDark]);
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
+    setIsDark(prevIsDark => !prevIsDark);
   };
 
   return (
-    <ThemeContext.Provider value={{ isDark, toggleTheme }}>
+    <ThemeContext.Provider value={{ isDark, toggleTheme, theme: isDark ? 'dark' : 'light' }}>
       {children}
     </ThemeContext.Provider>
   );
