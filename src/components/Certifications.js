@@ -112,7 +112,7 @@ const Certifications = () => {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
                 {type} Certifications
               </h3>
-
+              
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {certs.map((cert, index) => {
                   const IconComponent = cert.icon;
@@ -131,7 +131,7 @@ const Certifications = () => {
                         >
                           <IconComponent className="w-6 h-6" />
                         </motion.div>
-
+                        
                         <div className="flex-1">
                           <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
                             {cert.title}
@@ -139,10 +139,10 @@ const Certifications = () => {
                           <p className="text-gray-600 dark:text-gray-300 mb-3">
                             {cert.provider}
                           </p>
-
+                          
                           <div className="flex items-center justify-between">
                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                              cert.status === 'Pursuing'
+                              cert.status === 'Pursuing' 
                                 ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
                                 : 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
                             }`}>
@@ -158,7 +158,7 @@ const Certifications = () => {
                                 </div>
                               )}
                             </span>
-
+                            
                             {cert.status === 'Completed' && (
                               <motion.a
                                 href={cert.certificate}
