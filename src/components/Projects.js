@@ -21,9 +21,24 @@ const Projects = () => {
         "Comprehensive error handling and validation",
         "Fully responsive design for all devices"
       ],
-      github: "https://github.com/Harhsit-Kumar-Patel/PathByte",
-      demo: "https://pathbyte.netlify.app"
-    }
+      github: "https://github.com/harshit-patel/pathbyte",
+      demo: "https://pathbyte-demo.com"
+    },
+    {
+        title: "Inventura",
+        description: "A smart inventory assistant for small and mid-scale vendors that simplifies operations, predicts demand, and connects vendors with suppliers.",
+        period: "Ongoing",
+        technologies: ["React", "Flutter", "Node.js", "Python", "PostgreSQL", "Docker"],
+        features: [
+          "AI-powered demand forecasting",
+          "Community stock sharing between vendors",
+          "Voice and WhatsApp-based stock management",
+          "Dynamic pricing and sustainability tracking",
+          "Built for low-connectivity environments"
+        ],
+        github: "https://github.com/your-repo/inventura", // Replace with your actual GitHub link
+        demo: "https://inventura-casestudy.netlify.app/"
+      }
   ];
 
   return (
