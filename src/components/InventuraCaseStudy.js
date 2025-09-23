@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiExternalLink, FiGithub, FiUsers, FiBarChart2, FiMessageCircle, FiAward, FiCalendar } from 'react-icons/fi';
+import { FiExternalLink, FiGithub, FiUsers, FiBarChart2, FiMessageCircle, FiAward, FiCalendar, FiBookOpen } from 'react-icons/fi';
 
 const InventuraCaseStudy = () => {
   const ref = useRef(null);
@@ -86,7 +86,6 @@ const InventuraCaseStudy = () => {
           </p>
         </motion.div>
 
-        {/* Project Overview */}
         <motion.div
           variants={sectionVariants}
           initial="hidden"
@@ -113,7 +112,7 @@ const InventuraCaseStudy = () => {
               </div>
               <div className="flex flex-wrap gap-4">
                 <motion.a
-                  href="https://github.com/Harhsit-Kumar-Patel" // Replace with your actual GitHub link if available
+                  href="https://github.com/Harhsit-Kumar-Patel"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 bg-gray-800 dark:bg-gray-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200"
@@ -131,8 +130,8 @@ const InventuraCaseStudy = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <FiExternalLink className="w-5 h-5" />
-                  <span>Live Demo</span>
+                  <FiBookOpen className="w-5 h-5" />
+                  <span>View Case Study</span>
                 </motion.a>
               </div>
             </div>
@@ -149,108 +148,6 @@ const InventuraCaseStudy = () => {
                 ))}
               </ul>
             </div>
-          </div>
-        </motion.div>
-
-        {/* Problem & Solution */}
-        <motion.div
-          variants={sectionVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          className="grid lg:grid-cols-2 gap-8 mb-12"
-        >
-          <div className="glass dark:glass-dark p-8 rounded-3xl shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              The Challenge
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Small vendors rely on manual record-keeping, leading to stockouts, wasted products, and missed profit opportunities.
-            </p>
-            <ul className="space-y-3">
-              {challenges.map((challenge, index) => (
-                <li key={index} className="flex items-start space-x-3 text-gray-700 dark:text-gray-300">
-                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span>{challenge}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="glass dark:glass-dark p-8 rounded-3xl shadow-xl">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-              The Solution
-            </h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6">
-              Inventura is a user-friendly smart assistant that simplifies operations, predicts demand, and connects vendors with suppliers and peers.
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              {solutions.map((solution, index) => (
-                <div key={index} className="bg-primary-50 dark:bg-primary-900/20 p-4 rounded-xl">
-                  <div className="flex items-center space-x-2 text-primary-600 dark:text-primary-400 mb-2">
-                    {solution.icon}
-                    <h4 className="font-semibold text-sm">{solution.title}</h4>
-                  </div>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">{solution.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Technology Stack */}
-        <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="glass dark:glass-dark p-8 rounded-3xl shadow-xl mb-12"
-        >
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Technology Stack & Implementation
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {techStack.map((category) => (
-              <div key={category.category} className="text-center">
-                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-4">
-                  {category.category}
-                </h4>
-                <div className="space-y-2">
-                  {category.techs.map((tech) => (
-                    <div
-                      key={tech}
-                      className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm"
-                    >
-                      {tech}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Results & Impact */}
-        <motion.div
-            variants={sectionVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="glass dark:glass-dark p-8 rounded-3xl shadow-xl"
-        >
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Expected Results & Impact
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {results.map((result) => (
-              <div key={result.label} className="text-center">
-                <div className="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
-                  {result.metric}
-                </div>
-                <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                  {result.label}
-                </h4>
-                <p className="text-sm text-gray-600 dark:text-gray-400">
-                  {result.description}
-                </p>
-              </div>
-            ))}
           </div>
         </motion.div>
       </div>

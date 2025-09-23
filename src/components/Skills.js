@@ -61,7 +61,6 @@ const Skills = () => {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Professional Skills */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -92,7 +91,6 @@ const Skills = () => {
             </div>
           </motion.div>
 
-          {/* Technical Skills */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
