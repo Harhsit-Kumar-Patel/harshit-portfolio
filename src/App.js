@@ -4,13 +4,11 @@ import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import CaseStudy from './components/CaseStudy';
-import InventuraCaseStudy from './components/InventuraCaseStudy';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import { ThemeProvider } from './contexts/ThemeContext';
-import ThemeToggle from './components/ThemeToggle';
 
 function App() {
   return (
@@ -22,13 +20,12 @@ function App() {
           <Experience />
           <Projects />
           <CaseStudy />
-          <InventuraCaseStudy />
           <Skills />
           <Education />
           <Certifications />
           <Contact />
         </main>
-        <ThemeToggle />
+        {/* ThemeToggle component is now removed from here */}
       </div>
     </ThemeProvider>
   );

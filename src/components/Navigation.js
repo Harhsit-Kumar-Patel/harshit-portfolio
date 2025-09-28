@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import ThemeToggle from './ThemeToggle';
 
 const Navigation = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,6 +34,7 @@ const Navigation = () => {
                     <div className="text-2xl font-bold text-gray-900 dark:text-white">
                         Harshit Patel
                     </div>
+                    {/* Desktop Menu */}
                     <div className="hidden md:flex items-center space-x-8">
                         {links.map((link) => (
                             <a key={link.name} href={link.href} className="text-gray-600 dark:text-gray-300 hover:text-primary-500 dark:hover:text-primary-400 font-medium transition-colors">
@@ -40,13 +42,18 @@ const Navigation = () => {
                             </a>
                         ))}
                     </div>
-                    <div className="md:hidden">
-                        <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600 dark:text-gray-300">
-                            {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
-                        </button>
+                    {/* Mobile Menu Button and Theme Toggle */}
+                    <div className="flex items-center space-x-4">
+                        <ThemeToggle />
+                        <div className="md:hidden">
+                            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-600 dark:text-gray-300">
+                                {isOpen ? <FiX className="w-6 h-6" /> : <FiMenu className="w-6 h-6" />}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
+            {/* Mobile Menu Dropdown */}
             {isOpen && (
                 <motion.div
                     className="md:hidden px-4 pt-2 pb-4 space-y-2"

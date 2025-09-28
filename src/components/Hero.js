@@ -66,8 +66,8 @@ const Hero = () => {
                             className="absolute inset-4 border-4 border-indigo-500/20 rounded-full"
                         ></motion.div>
                         <div className="absolute inset-12 bg-white dark:bg-gray-800 rounded-full shadow-2xl flex items-center justify-center">
-                            <p className="text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-indigo-500">
-                                HKP
+                            <p className="text-8xl">
+                                👨‍💻
                             </p>
                         </div>
                     </div>
