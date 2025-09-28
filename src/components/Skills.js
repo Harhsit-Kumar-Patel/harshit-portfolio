@@ -2,11 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { 
-    FiTrendingUp, FiUsers, FiBarChart, FiLayers, FiTarget, FiCode, FiDatabase, FiGitBranch, FiShare2 
+import {
+    FiTrendingUp, FiUsers, FiBarChart, FiLayers, FiTarget, FiCode, FiDatabase, FiShare2
 } from 'react-icons/fi';
-import { SiCplusplus, SiPython, SiJavascript, SiHtml5, SiCss3, SiSqlite, SiGit } from 'react-icons/si';
-
+import { SiCplusplus, SiPython, SiGit } from 'react-icons/si';
 
 const Skills = () => {
   const ref = useRef(null);
@@ -20,7 +19,6 @@ const Skills = () => {
     { name: "A/B Testing", icon: FiUsers }
   ];
 
-  // Updated technical skills with icons
   const technicalSkills = [
     { name: "C++", icon: SiCplusplus },
     { name: "Python", icon: SiPython },
