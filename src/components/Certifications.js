@@ -74,7 +74,7 @@ const Certifications = () => {
     }, {});
 
     return (
-        <section id="certifications" className="py-20 bg-gray-50 dark:bg-gray-900">
+        <section id="certifications" className="py-20 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.div
                     ref={ref}
@@ -83,10 +83,10 @@ const Certifications = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Certifications
                     </h2>
-                    <p className="text-xl text-gray-600 dark:text-gray-300">
+                    <p className="text-xl text-gray-600">
                         My commitment to continuous learning.
                     </p>
                 </motion.div>
@@ -99,7 +99,7 @@ const Certifications = () => {
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.2 + typeIndex * 0.2 }}
                         >
-                            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
                                 {type} Certifications
                             </h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -111,27 +111,27 @@ const Certifications = () => {
                                             initial={{ opacity: 0, y: 50 }}
                                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                                             transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                                            className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex flex-col"
+                                            className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 flex flex-col"
                                         >
                                             <div className="flex items-start space-x-4 mb-4">
                                                 <div className={`p-3 rounded-xl bg-gradient-to-r ${cert.color} text-white shadow-md`}>
                                                     <Icon className="w-6 h-6" />
                                                 </div>
                                                 <div className="flex-1">
-                                                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
+                                                    <h4 className="text-lg font-semibold text-gray-900">
                                                         {cert.title}
                                                     </h4>
-                                                    <p className="text-gray-600 dark:text-gray-400">
+                                                    <p className="text-gray-600">
                                                         {cert.provider}
                                                     </p>
                                                 </div>
                                             </div>
-                                            <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                                                <span className={`px-3 py-1 text-xs font-medium rounded-full ${cert.status === 'Pursuing' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300' : 'bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300'}`}>
+                                            <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-200">
+                                                <span className={`px-3 py-1 text-xs font-medium rounded-full ${cert.status === 'Pursuing' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'}`}>
                                                     {cert.status}
                                                 </span>
                                                 {cert.status === 'Completed' && (
-                                                    <a href={cert.certificate} target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 font-semibold transition-colors">
+                                                    <a href={cert.certificate} target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-primary-500 hover:text-primary-600 font-semibold transition-colors">
                                                         <FiEye />
                                                         <span>View</span>
                                                     </a>

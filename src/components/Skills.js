@@ -29,7 +29,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-white dark:bg-gray-800">
+    <section id="skills" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -38,10 +38,10 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Skills & Expertise
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300">
+          <p className="text-xl text-gray-600">
             My professional and technical capabilities.
           </p>
         </motion.div>
@@ -52,9 +52,9 @@ const Skills = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700"
+            className="bg-gray-50 p-8 rounded-2xl border border-gray-200"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
               Professional Skills
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -62,10 +62,10 @@ const Skills = () => {
                 const Icon = skill.icon;
                 return (
                   <div key={index} className="text-center">
-                    <div className="w-16 h-16 mx-auto bg-white dark:bg-gray-700 rounded-full flex items-center justify-center shadow-md mb-3">
+                    <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-3">
                       <Icon className="w-8 h-8 text-primary-500" />
                     </div>
-                    <p className="font-semibold text-gray-700 dark:text-gray-300">{skill.name}</p>
+                    <p className="font-semibold text-gray-700">{skill.name}</p>
                   </div>
                 );
               })}
@@ -77,9 +77,9 @@ const Skills = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700"
+            className="bg-gray-50 p-8 rounded-2xl border border-gray-200"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
               Technical Skills
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -87,10 +87,10 @@ const Skills = () => {
                 const Icon = skill.icon;
                 return (
                   <div key={index} className="text-center">
-                    <div className="w-16 h-16 mx-auto bg-white dark:bg-gray-700 rounded-full flex items-center justify-center shadow-md mb-3">
+                    <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-3">
                       <Icon className="w-8 h-8 text-primary-500" />
                     </div>
-                    <p className="font-semibold text-gray-700 dark:text-gray-300">{skill.name}</p>
+                    <p className="font-semibold text-gray-700">{skill.name}</p>
                   </div>
                 );
               })}
