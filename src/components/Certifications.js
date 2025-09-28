@@ -46,7 +46,7 @@ const Certifications = () => {
       certificate: "/certificates/php-mysql-udemy.pdf"
     },
     {
-      title: "Modern Programming (C, C++, PHP, Java)",
+      title: "Modern Programming",
       provider: "Udemy",
       status: "Completed",
       type: "Technical",

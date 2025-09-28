@@ -40,20 +40,20 @@ const Experience = () => {
           </p>
         </motion.div>
 
-        <div className="relative">
-          <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+        <div className="relative max-w-3xl mx-auto">
+          {/* Vertical line for the timeline */}
+          <div className="absolute left-1/2 top-0 h-full w-0.5 bg-gray-200 dark:bg-gray-700 transform -translate-x-1/2"></div>
+
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
-              className="md:flex md:items-center md:justify-center md:space-x-8 mb-12"
+              className="relative mb-12"
             >
-              <div className={`w-full md:w-2/5 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} md:order-${index % 2 === 0 ? 1 : 2}`}>
-              </div>
-              <div className={`relative w-full md:w-3/5 p-8 rounded-2xl shadow-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 md:order-${index % 2 === 0 ? 2 : 1}`}>
-                <div className="hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-primary-500 rounded-full border-4 border-white dark:border-gray-900" style={index % 2 === 0 ? {left: '-2rem'} : {right: '-2rem'}}></div>
+              <div className="absolute left-1/2 top-1 w-4 h-4 mt-1 bg-primary-500 rounded-full border-4 border-white dark:border-gray-900 transform -translate-x-1/2"></div>
+              <div className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
                 <div className="flex items-center mb-3">
                   <FiBriefcase className="w-6 h-6 mr-3 text-primary-500" />
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
