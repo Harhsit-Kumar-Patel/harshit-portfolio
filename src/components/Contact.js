@@ -25,13 +25,13 @@ const Contact = () => {
                         I'm currently open to new opportunities and collaborations. Feel free to reach out—I'd love to hear from you!
                     </p>
                     <div className="max-w-sm mx-auto space-y-6">
-                        <a href="mailto:harshitkumarp54@gmail.com" className="flex items-center justify-center space-x-3 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <a href="mailto:work.harshitpatel@gmail.com" className="flex items-center justify-center space-x-3 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                             <FiMail className="w-6 h-6 text-primary-500" />
-                            <span className="font-semibold text-gray-700 dark:text-gray-200">harshitkumarp54@gmail.com</span>
+                            <span className="font-semibold text-gray-700 dark:text-gray-200">work.harshitpatel@gmail.com</span>
                         </a>
-                        <a href="tel:+911234567890" className="flex items-center justify-center space-x-3 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                        <a href="tel:+916386226495" className="flex items-center justify-center space-x-3 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                             <FiPhone className="w-6 h-6 text-primary-500" />
-                            <span className="font-semibold text-gray-700 dark:text-gray-200">+91 1234567890</span>
+                            <span className="font-semibold text-gray-700 dark:text-gray-200">+91 6386226495</span>
                         </a>
                     </div>
                     <div className="flex justify-center space-x-6 mt-10">
