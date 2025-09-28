@@ -16,31 +16,7 @@ const Skills = () => {
     { name: "A/B Testing", icon: FiUsers }
   ];
 
-  const technicalSkills = [
-    { name: "C++", color: "from-blue-500 to-blue-600" },
-    { name: "Python", color: "from-yellow-500 to-yellow-600" },
-    { name: "DSA", color: "from-green-500 to-green-600" },
-    { name: "SQL", color: "from-red-500 to-red-600" },
-    { name: "Git", color: "from-orange-500 to-orange-600" },
-    { name: "HTML/CSS/JS", color: "from-purple-500 to-purple-600" }
-  ];
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
+  const technicalSkills = ["C++", "Python", "DSA", "SQL", "Git", "HTML/CSS/JS"];
 
   return (
     <section id="skills" className="py-20 bg-white dark:bg-gray-800">
@@ -56,70 +32,51 @@ const Skills = () => {
             Skills & Expertise
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300">
-            Professional and technical capabilities
+            My professional and technical capabilities.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Professional Skills */}
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
               Professional Skills
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
               {professionalSkills.map((skill, index) => {
-                const IconComponent = skill.icon;
+                const Icon = skill.icon;
                 return (
-                  <motion.div
-                    key={index}
-                    variants={itemVariants}
-                    className="glass dark:glass-dark p-6 rounded-2xl text-center group hover:scale-105 transition-transform duration-200"
-                    whileHover={{ y: -5 }}
-                  >
-                    <div className="p-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-200">
-                      <IconComponent className="w-6 h-6" />
+                  <div key={index} className="text-center">
+                    <div className="w-16 h-16 mx-auto bg-white dark:bg-gray-700 rounded-full flex items-center justify-center shadow-md mb-3">
+                      <Icon className="w-8 h-8 text-primary-500" />
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
-                      {skill.name}
-                    </h4>
-                  </motion.div>
+                    <p className="font-semibold text-gray-700 dark:text-gray-300">{skill.name}</p>
+                  </div>
                 );
               })}
             </div>
           </motion.div>
 
+          {/* Technical Skills */}
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-gray-50 dark:bg-gray-800/50 p-8 rounded-2xl border border-gray-200 dark:border-gray-700"
           >
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
               Technical Skills
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               {technicalSkills.map((skill, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="glass dark:glass-dark p-6 rounded-2xl text-center group hover:scale-105 transition-transform duration-200"
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="w-16 h-16 mx-auto bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mb-4">
-                    <motion.div
-                      className={`w-12 h-12 bg-gradient-to-r ${skill.color} rounded-full flex items-center justify-center text-white font-bold text-lg`}
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      {skill.name.charAt(0)}
-                    </motion.div>
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    {skill.name}
-                  </h4>
-                </motion.div>
+                <span key={index} className="px-4 py-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full font-medium shadow-md">
+                  {skill}
+                </span>
               ))}
             </div>
           </motion.div>

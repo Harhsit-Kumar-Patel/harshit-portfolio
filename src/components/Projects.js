@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiExternalLink, FiGithub, FiCalendar } from 'react-icons/fi';
+import { FiExternalLink, FiGithub } from 'react-icons/fi';
 
 const Projects = () => {
   const ref = useRef(null);
@@ -11,44 +11,15 @@ const Projects = () => {
   const projects = [
     {
       title: "PathByte",
-      description: "A comprehensive full-stack career development platform designed to help professionals navigate their career paths with personalized roadmaps and market insights.",
-      period: "Sept 2025",
-      technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "JWT", "TailwindCSS"],
-      features: [
-        "Personalized career roadmaps based on user goals",
-        "Real-time market analysis and job trends",
-        "RESTful API with secure authentication",
-        "Comprehensive error handling and validation",
-        "Fully responsive design for all devices"
-      ],
+      description: "A full-stack career development platform to help professionals navigate their career paths with personalized roadmaps.",
+      technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "TailwindCSS"],
       github: "https://github.com/harshit-patel/pathbyte",
       demo: "https://pathbyte-demo.com"
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="projects" className="py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -57,114 +28,49 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
-            initial={{ opacity: 0, y: 20 }}
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            Featured Project
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300">
+            An innovative solution I've built.
+          </p>
+        </motion.div>
+
+        {projects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden border border-gray-200 dark:border-gray-700"
           >
-            Featured Projects
-          </motion.h2>
-          <motion.p
-            className="text-xl text-gray-600 dark:text-gray-300"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Innovative solutions that make a difference
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          className="space-y-12"
-          variants={containerVariants}
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-        >
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              variants={itemVariants}
-              className="glass dark:glass-dark p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300"
-            >
-              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                <div className="flex-1">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <h3 className="text-3xl font-bold text-gray-900 dark:text-white">
-                      {project.title}
-                    </h3>
-                    <div className="flex items-center space-x-1 text-gray-500 dark:text-gray-400">
-                      <FiCalendar className="w-4 h-4" />
-                      <span className="text-sm">{project.period}</span>
-                    </div>
-                  </div>
-                  <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
+            <div className="p-8">
+              <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-3">
+                {project.title}
+              </h3>
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.technologies.map((tech, idx) => (
+                  <span key={idx} className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">
+                    {tech}
+                  </span>
+                ))}
               </div>
-
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
-                  Technologies Used:
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, idx) => (
-                    <motion.span
-                      key={idx}
-                      className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium"
-                      whileHover={{ y: -2, transition: { duration: 0.2 } }}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">
-                  Key Features:
-                </h4>
-                <ul className="space-y-2">
-                  {project.features.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-start space-x-3 text-gray-700 dark:text-gray-300"
-                    >
-                      <div className="w-2 h-2 bg-primary-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               <div className="flex flex-wrap gap-4">
-                <motion.a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-gray-800 dark:bg-gray-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-700 dark:hover:bg-gray-600 transition-colors duration-200"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FiGithub className="w-5 h-5" />
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-full font-semibold transition-colors">
+                  <FiGithub />
                   <span>View Code</span>
-                </motion.a>
-                <motion.a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-200"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <FiExternalLink className="w-5 h-5" />
+                </a>
+                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gradient-to-r from-primary-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-full font-semibold transition-opacity">
+                  <FiExternalLink />
                   <span>Live Demo</span>
-                </motion.a>
+                </a>
               </div>
-            </motion.div>
-          ))}
-        </motion.div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
