@@ -2,7 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiTrendingUp, FiUsers, FiBarChart, FiLayers, FiTarget } from 'react-icons/fi';
+import { 
+    FiTrendingUp, FiUsers, FiBarChart, FiLayers, FiTarget, FiCode, FiDatabase, FiGitBranch, FiShare2 
+} from 'react-icons/fi';
+import { SiCplusplus, SiPython, SiJavascript, SiHtml5, SiCss3, SiSqlite, SiGit } from 'react-icons/si';
+
 
 const Skills = () => {
   const ref = useRef(null);
@@ -16,7 +20,15 @@ const Skills = () => {
     { name: "A/B Testing", icon: FiUsers }
   ];
 
-  const technicalSkills = ["C++", "Python", "DSA", "SQL", "Git", "HTML/CSS/JS"];
+  // Updated technical skills with icons
+  const technicalSkills = [
+    { name: "C++", icon: SiCplusplus },
+    { name: "Python", icon: SiPython },
+    { name: "DSA", icon: FiShare2 },
+    { name: "SQL", icon: FiDatabase },
+    { name: "Git", icon: SiGit },
+    { name: "HTML/CSS/JS", icon: FiCode }
+  ];
 
   return (
     <section id="skills" className="py-20 bg-white dark:bg-gray-800">
@@ -72,12 +84,18 @@ const Skills = () => {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
               Technical Skills
             </h3>
-            <div className="flex flex-wrap justify-center gap-4">
-              {technicalSkills.map((skill, index) => (
-                <span key={index} className="px-4 py-2 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full font-medium shadow-md">
-                  {skill}
-                </span>
-              ))}
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+                 {technicalSkills.map((skill, index) => {
+                const Icon = skill.icon;
+                return (
+                  <div key={index} className="text-center">
+                    <div className="w-16 h-16 mx-auto bg-white dark:bg-gray-700 rounded-full flex items-center justify-center shadow-md mb-3">
+                      <Icon className="w-8 h-8 text-primary-500" />
+                    </div>
+                    <p className="font-semibold text-gray-700 dark:text-gray-300">{skill.name}</p>
+                  </div>
+                );
+              })}
             </div>
           </motion.div>
         </div>
