@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiAward, FiClock, FiEye } from 'react-icons/fi';
+import { FiAward, FiEye } from 'react-icons/fi';
 
 const Certifications = () => {
     const ref = useRef(null);
