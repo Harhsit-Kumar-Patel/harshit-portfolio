@@ -78,6 +78,30 @@ const CaseStudy = () => {
                             </a>
                         </div>
                     </motion.div>
+                    
+                    {/* ConvoHub Case Study Card */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                        className="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-between border border-gray-200"
+                    >
+                        <div>
+                            <FiBookOpen className="w-10 h-10 mb-4 text-primary-500" />
+                            <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                                ConvoHub – Full Case Study
+                            </h3>
+                            <p className="text-gray-600 mb-6">
+                                Where students and professionals connect, collaborate, and grow.
+                            </p>
+                        </div>
+                        <div className="flex flex-wrap gap-4">
+                            <a href="https://convohub-casestudy.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gradient-to-r from-primary-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-full font-semibold transition-opacity">
+                                <FiEye />
+                                <span>View Case Study</span>
+                            </a>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>
