@@ -21,8 +21,8 @@ const Projects = () => {
         "Comprehensive error handling and validation",
         "Fully responsive design for all devices"
       ],
-      github: "https://github.com/harshit-patel/pathbyte",
-      demo: "https://pathbyte-demo.com"
+      github: "https://github.com/Harhsit-Kumar-Patel/PathByte",
+      demo: "https://pathbyte.netlify.app/"
     }
   ];
 

@@ -13,8 +13,8 @@ const Projects = () => {
       title: "PathByte",
       description: "A full-stack career development platform to help professionals navigate their career paths with personalized roadmaps.",
       technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "TailwindCSS"],
-      github: "https://github.com/harshit-patel/pathbyte",
-      demo: "https://pathbyte-demo.com"
+      github: "https://github.com/Harhsit-Kumar-Patel/PathByte",
+      demo: "https://pathbyte.netlify.app/"
     }
   ];
 
