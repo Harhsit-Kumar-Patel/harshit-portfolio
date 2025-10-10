@@ -28,6 +28,15 @@ const Certifications = () => {
       certificate: "/certificates/microsoft-ai-product-manager.pdf"
     },
     {
+        title: "Natural Language Processing Essentials",
+        provider: "Coursera",
+        status: "Completed",
+        type: "Technical",
+        color: "from-teal-500 to-teal-600",
+        icon: FiAward,
+        certificate: "/certificates/Coursera-NLP-Certificate.pdf"
+    },
+    {
       title: "C Programming",
       provider: "Udemy",
       status: "Completed",
