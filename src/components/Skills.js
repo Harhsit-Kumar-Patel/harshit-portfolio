@@ -5,7 +5,8 @@ import { useRef } from 'react';
 import {
     FiTrendingUp, FiUsers, FiBarChart, FiLayers, FiTarget, FiCode, FiDatabase, FiShare2, FiCpu, FiMessageSquare
 } from 'react-icons/fi';
-import { SiCplusplus, SiPython, SiGit, SiPhp, SiMysql, SiJava, SiC } from 'react-icons/si';
+import { SiCplusplus, SiPython, SiGit, SiPhp, SiMysql, SiC } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
 
 const Skills = () => {
   const ref = useRef(null);
@@ -24,7 +25,7 @@ const Skills = () => {
     { name: "C++", icon: SiCplusplus },
     { name: "Python", icon: SiPython },
     { name: "PHP", icon: SiPhp },
-    { name: "Java", icon: SiJava },
+    { name: "Java", icon: FaJava },
     { name: "MySQL", icon: SiMysql },
     { name: "DSA", icon: FiShare2 },
     { name: "SQL", icon: FiDatabase },
