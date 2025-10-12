@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import {
-    FiTrendingUp, FiUsers, FiBarChart, FiLayers, FiTarget, FiCode, FiDatabase, FiShare2
+    FiTrendingUp, FiUsers, FiBarChart, FiLayers, FiTarget, FiCode, FiDatabase, FiShare2, FiCpu, FiMessageSquare
 } from 'react-icons/fi';
-import { SiCplusplus, SiPython, SiGit } from 'react-icons/si';
+import { SiCplusplus, SiPython, SiGit, SiPhp, SiMysql, SiJava, SiC } from 'react-icons/si';
 
 const Skills = () => {
   const ref = useRef(null);
@@ -20,12 +20,18 @@ const Skills = () => {
   ];
 
   const technicalSkills = [
+    { name: "C", icon: SiC },
     { name: "C++", icon: SiCplusplus },
     { name: "Python", icon: SiPython },
+    { name: "PHP", icon: SiPhp },
+    { name: "Java", icon: SiJava },
+    { name: "MySQL", icon: SiMysql },
     { name: "DSA", icon: FiShare2 },
     { name: "SQL", icon: FiDatabase },
     { name: "Git", icon: SiGit },
-    { name: "HTML/CSS/JS", icon: FiCode }
+    { name: "HTML/CSS/JS", icon: FiCode },
+    { name: "Generative AI", icon: FiCpu },
+    { name: "NLP", icon: FiMessageSquare }
   ];
 
   return (

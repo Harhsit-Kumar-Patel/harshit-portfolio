@@ -17,12 +17,18 @@ const Skills = () => {
   ];
 
   const technicalSkills = [
+    { name: "C", color: "from-gray-500 to-gray-600" },
     { name: "C++", color: "from-blue-500 to-blue-600" },
     { name: "Python", color: "from-yellow-500 to-yellow-600" },
+    { name: "PHP", color: "from-indigo-500 to-indigo-600" },
+    { name: "Java", color: "from-red-500 to-red-600" },
+    { name: "MySQL", color: "from-cyan-500 to-cyan-600" },
     { name: "DSA", color: "from-green-500 to-green-600" },
     { name: "SQL", color: "from-red-500 to-red-600" },
     { name: "Git", color: "from-orange-500 to-orange-600" },
-    { name: "HTML/CSS/JS", color: "from-purple-500 to-purple-600" }
+    { name: "HTML/CSS/JS", color: "from-purple-500 to-purple-600" },
+    { name: "Generative AI", color: "from-pink-500 to-pink-600" },
+    { name: "NLP", color: "from-teal-500 to-teal-600" }
   ];
 
   return (
