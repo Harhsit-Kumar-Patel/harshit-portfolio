@@ -28,6 +28,15 @@ const Certifications = () => {
       certificate: "/certificates/microsoft-ai-product-manager.pdf"
     },
     {
+        title: "Generative AI Leader",
+        provider: "Coursera",
+        status: "Completed",
+        type: "Professional",
+        color: "from-yellow-500 to-yellow-600",
+        icon: FiAward,
+        certificate: "/certificates/Coursera-Google-Cloud-Certificate.pdf"
+    },
+    {
         title: "Natural Language Processing Essentials",
         provider: "Coursera",
         status: "Completed",
