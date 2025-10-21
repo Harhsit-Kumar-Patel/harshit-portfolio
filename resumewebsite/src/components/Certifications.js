@@ -28,7 +28,7 @@ const Certifications = () => {
       certificate: "/certificates/microsoft-ai-product-manager.pdf"
     },
     {
-      title: "Generative AI Leader",
+      title: "Google Cloud Generative AI Leader",
       provider: "Coursera",
       status: "Completed",
       type: "Professional",
@@ -37,7 +37,7 @@ const Certifications = () => {
       certificate: "/certificates/Coursera-Google-Cloud-Certificate.pdf"
     },
     {
-      title: "Natural Language Processing Essentials",
+      title: "Nvidia Natural Language Processing Essentials",
       provider: "Coursera",
       status: "Completed",
       type: "Technical",
