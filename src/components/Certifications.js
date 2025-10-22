@@ -45,6 +45,42 @@ const Certifications = () => {
         icon: FiAward,
         certificate: "/certificates/Coursera-NLP-Certificate.pdf"
     },
+    { // --- NEW ---
+      title: "Introduction to Networking",
+      provider: "NVIDIA (Coursera)",
+      status: "Completed",
+      type: "Technical",
+      color: "from-green-600 to-green-700",
+      icon: FiAward,
+      certificate: "/certificates/nvidia-networking-coursera.pdf"
+    },
+    { // --- NEW ---
+      title: "GenSpark GitHub Copilot Learning Path",
+      provider: "Microsoft",
+      status: "Completed",
+      type: "Technical",
+      color: "from-gray-500 to-gray-600",
+      icon: FiAward,
+      certificate: "/certificates/microsoft-github-copilot.pdf"
+    },
+    { // --- NEW ---
+      title: "GenSpark Azure OpenAI and Semantic Kernel",
+      provider: "Microsoft",
+      status: "Completed",
+      type: "Technical",
+      color: "from-blue-600 to-blue-700",
+      icon: FiAward,
+      certificate: "/certificates/microsoft-azure-openai-semantic-kernel.pdf"
+    },
+    { // --- NEW ---
+      title: "GenSpark Azure AI Engineer Certification Path",
+      provider: "Microsoft",
+      status: "Completed",
+      type: "Technical",
+      color: "from-sky-600 to-sky-700",
+      icon: FiAward,
+      certificate: "/certificates/microsoft-azure-ai-engineer.pdf"
+    },
     {
       title: "C Programming",
       provider: "Udemy",

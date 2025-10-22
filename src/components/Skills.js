@@ -2,107 +2,140 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import {
-    FiTrendingUp, FiUsers, FiBarChart, FiLayers, FiTarget, FiCode, FiDatabase, FiShare2, FiCpu, FiMessageSquare
-} from 'react-icons/fi';
-import { SiCplusplus, SiPython, SiGit, SiPhp, SiMysql, SiC } from 'react-icons/si';
-import { FaJava } from 'react-icons/fa';
+import { FiCheckCircle } from 'react-icons/fi'; // Using a single, clean icon
 
 const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  // 8 Professional Skills
   const professionalSkills = [
-    { name: "Product Strategy", icon: FiTarget },
-    { name: "Market Research", icon: FiTrendingUp },
-    { name: "Wireframing (Figma)", icon: FiLayers },
-    { name: "Roadmapping", icon: FiBarChart },
-    { name: "A/B Testing", icon: FiUsers }
+    "Product Strategy",
+    "Roadmapping",
+    "Project Management",
+    "Market Research",
+    "User Research",
+    "Wireframing (Figma)",
+    "A/B Testing",
+    "Agile Methodologies"
   ];
 
+  // 8 Technical Skills (summarized for balance)
   const technicalSkills = [
-    { name: "C", icon: SiC },
-    { name: "C++", icon: SiCplusplus },
-    { name: "Python", icon: SiPython },
-    { name: "PHP", icon: SiPhp },
-    { name: "Java", icon: FaJava },
-    { name: "MySQL", icon: SiMysql },
-    { name: "DSA", icon: FiShare2 },
-    { name: "SQL", icon: FiDatabase },
-    { name: "Git", icon: SiGit },
-    { name: "HTML/CSS/JS", icon: FiCode },
-    { name: "Generative AI", icon: FiCpu },
-    { name: "NLP", icon: FiMessageSquare }
+    "Programming (C++, Python, Java)",
+    "Generative AI & NLP",
+    "AI Frameworks (Semantic Kernel)",
+    "Web Dev (JS, HTML/CSS, PHP)",
+    "Databases (SQL, MySQL)",
+    "Cloud & Networking (Azure)",
+    "Data Structures & Algorithms",
+    "Dev Tools (Git, GitHub Copilot)"
   ];
+  
+  // Animation for each card
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1, // Staggered delay for each card
+        duration: 0.3
+      }
+    })
+  };
 
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             Skills & Expertise
-          </h2>
-          <p className="text-xl text-gray-600">
-            My professional and technical capabilities.
-          </p>
+          </motion.h2>
+          <motion.p
+            className="text-xl text-gray-600 dark:text-gray-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            Professional and technical capabilities
+          </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Professional Skills */}
+        {/* Main grid: 2 columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          
+          {/* Professional Skills Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gray-50 p-8 rounded-2xl border border-gray-200"
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
               Professional Skills
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-              {professionalSkills.map((skill, index) => {
-                const Icon = skill.icon;
-                return (
-                  <div key={index} className="text-center">
-                    <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-3">
-                      <Icon className="w-8 h-8 text-primary-500" />
-                    </div>
-                    <p className="font-semibold text-gray-700">{skill.name}</p>
-                  </div>
-                );
-              })}
+            {/* Inner grid: 2 columns for cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {professionalSkills.map((skill, index) => (
+                <motion.div
+                  key={index}
+                  className="glass dark:glass-dark p-5 rounded-xl shadow-lg flex items-center space-x-3 group"
+                  custom={index}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  variants={cardVariants}
+                  whileHover={{ y: -5, scale: 1.05 }}
+                >
+                  <FiCheckCircle className="w-5 h-5 text-primary-500 dark:text-primary-400 flex-shrink-0" />
+                  <span className="text-md font-medium text-gray-800 dark:text-gray-100">
+                    {skill}
+                  </span>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Technical Skills */}
+          {/* Technical Skills Column */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-gray-50 p-8 rounded-2xl border border-gray-200"
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
               Technical Skills
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                 {technicalSkills.map((skill, index) => {
-                const Icon = skill.icon;
-                return (
-                  <div key={index} className="text-center">
-                    <div className="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-3">
-                      <Icon className="w-8 h-8 text-primary-500" />
-                    </div>
-                    <p className="font-semibold text-gray-700">{skill.name}</p>
-                  </div>
-                );
-              })}
+            {/* Inner grid: 2 columns for cards (IDENTICAL to professional for alignment) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {technicalSkills.map((skill, index) => (
+                <motion.div
+                  key={index}
+                  className="glass dark:glass-dark p-5 rounded-xl shadow-lg flex items-center space-x-3 group"
+                  custom={index}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  variants={cardVariants}
+                  whileHover={{ y: -5, scale: 1.05 }}
+                >
+                  <FiCheckCircle className="w-5 h-5 text-green-500 dark:text-green-400 flex-shrink-0" />
+                  <span className="text-md font-medium text-gray-800 dark:text-gray-100">
+                    {skill}
+                  </span>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>

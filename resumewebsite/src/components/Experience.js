@@ -9,7 +9,18 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const experiences = [
-    {
+    { // --- NEW EXPERIENCE ---
+      title: "Product Manager - Ed Tech",
+      company: "International Institute Of SDGs & Public Policy Research",
+      location: "Remote", // Added "Remote" as a placeholder
+      period: "Sep 2025 – Present",
+      responsibilities: [
+        "Collaborated with cross-functional teams to define product requirements and roadmap for EdTech solutions aligned with UN SDGs.",
+        "Conducted market research and competitor analysis to identify emerging trends and innovation opportunities in education technology.",
+        "Assisted in developing, testing, and improving product features to enhance user engagement and learning experience."
+      ]
+    },
+    { // --- EXISTING EXPERIENCE ---
       title: "Computer Faculty",
       company: "Sant Sai Shikshan Sansthan",
       location: "Varanasi",

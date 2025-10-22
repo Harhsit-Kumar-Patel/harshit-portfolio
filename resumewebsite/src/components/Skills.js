@@ -2,34 +2,48 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiTrendingUp, FiUsers, FiBarChart, FiLayers, FiTarget } from 'react-icons/fi';
+import { FiCheckCircle } from 'react-icons/fi'; // Using a single, clean icon
 
 const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  // 8 Professional Skills
   const professionalSkills = [
-    { name: "Product Strategy", icon: FiTarget },
-    { name: "Market Research", icon: FiTrendingUp },
-    { name: "Wireframing (Figma)", icon: FiLayers },
-    { name: "Roadmapping", icon: FiBarChart },
-    { name: "A/B Testing", icon: FiUsers }
+    "Product Strategy",
+    "Roadmapping",
+    "Project Management",
+    "Market Research",
+    "User Research",
+    "Wireframing (Figma)",
+    "A/B Testing",
+    "Agile Methodologies"
   ];
 
+  // 8 Technical Skills (summarized for balance)
   const technicalSkills = [
-    { name: "C", color: "from-gray-500 to-gray-600" },
-    { name: "C++", color: "from-blue-500 to-blue-600" },
-    { name: "Python", color: "from-yellow-500 to-yellow-600" },
-    { name: "PHP", color: "from-indigo-500 to-indigo-600" },
-    { name: "Java", color: "from-red-500 to-red-600" },
-    { name: "MySQL", color: "from-cyan-500 to-cyan-600" },
-    { name: "DSA", color: "from-green-500 to-green-600" },
-    { name: "SQL", color: "from-red-500 to-red-600" },
-    { name: "Git", color: "from-orange-500 to-orange-600" },
-    { name: "HTML/CSS/JS", color: "from-purple-500 to-purple-600" },
-    { name: "Generative AI", color: "from-pink-500 to-pink-600" },
-    { name: "NLP", color: "from-teal-500 to-teal-600" }
+    "Programming (C++, Python, Java)",
+    "Generative AI & NLP",
+    "AI Frameworks (Semantic Kernel)",
+    "Web Dev (JS, HTML/CSS, PHP)",
+    "Databases (SQL, MySQL)",
+    "Cloud & Networking (Azure)",
+    "Data Structures & Algorithms",
+    "Dev Tools (Git, GitHub Copilot)"
   ];
+  
+  // Animation for each card
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.1, // Staggered delay for each card
+        duration: 0.3
+      }
+    })
+  };
 
   return (
     <section id="skills" className="py-20 bg-white dark:bg-gray-800">
@@ -59,8 +73,10 @@ const Skills = () => {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Professional Skills */}
+        {/* Main grid: 2 columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+          
+          {/* Professional Skills Column */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
@@ -69,31 +85,28 @@ const Skills = () => {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
               Professional Skills
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {professionalSkills.map((skill, index) => {
-                const IconComponent = skill.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                    className="glass dark:glass-dark p-6 rounded-2xl text-center group hover:scale-105 transition-transform duration-200"
-                    whileHover={{ y: -5 }}
-                  >
-                    <div className="p-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl w-fit mx-auto mb-4 group-hover:scale-110 transition-transform duration-200">
-                      <IconComponent className="w-6 h-6" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
-                      {skill.name}
-                    </h4>
-                  </motion.div>
-                );
-              })}
+            {/* Inner grid: 2 columns for cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {professionalSkills.map((skill, index) => (
+                <motion.div
+                  key={index}
+                  className="glass dark:glass-dark p-5 rounded-xl shadow-lg flex items-center space-x-3 group"
+                  custom={index}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  variants={cardVariants}
+                  whileHover={{ y: -5, scale: 1.05 }}
+                >
+                  <FiCheckCircle className="w-5 h-5 text-primary-500 dark:text-primary-400 flex-shrink-0" />
+                  <span className="text-md font-medium text-gray-800 dark:text-gray-100">
+                    {skill}
+                  </span>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Technical Skills */}
+          {/* Technical Skills Column */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
@@ -102,32 +115,27 @@ const Skills = () => {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
               Technical Skills
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {/* Inner grid: 2 columns for cards (IDENTICAL to professional for alignment) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {technicalSkills.map((skill, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.4, delay: 0.8 + index * 0.1 }}
-                  className="glass dark:glass-dark p-6 rounded-2xl text-center group hover:scale-105 transition-transform duration-200"
-                  whileHover={{ y: -5 }}
+                  className="glass dark:glass-dark p-5 rounded-xl shadow-lg flex items-center space-x-3 group"
+                  custom={index}
+                  initial="hidden"
+                  animate={isInView ? "visible" : "hidden"}
+                  variants={cardVariants}
+                  whileHover={{ y: -5, scale: 1.05 }}
                 >
-                  <div className="w-16 h-16 mx-auto bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mb-4">
-                    <motion.div
-                      className={`w-12 h-12 bg-gradient-to-r ${skill.color} rounded-full flex items-center justify-center text-white font-bold text-lg`}
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      {skill.name.charAt(0)}
-                    </motion.div>
-                  </div>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    {skill.name}
-                  </h4>
+                  <FiCheckCircle className="w-5 h-5 text-green-500 dark:text-green-400 flex-shrink-0" />
+                  <span className="text-md font-medium text-gray-800 dark:text-gray-100">
+                    {skill}
+                  </span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
