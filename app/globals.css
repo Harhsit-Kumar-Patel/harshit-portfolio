@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --font-sans: "Avenir Next", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-sans), sans-serif;
+    background:
+      radial-gradient(circle at top left, rgba(15, 118, 110, 0.08), transparent 28%),
+      radial-gradient(circle at top right, rgba(14, 116, 144, 0.08), transparent 26%),
+      linear-gradient(180deg, #fcfefe 0%, #f5fbfb 48%, #fbfcfc 100%);
+  }
+
+  section {
+    scroll-margin-top: 6rem;
+  }
+
+  ::selection {
+    background: rgba(15, 118, 110, 0.16);
+    color: #0f172a;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    transition:
+      color 180ms ease,
+      border-color 180ms ease,
+      background-color 180ms ease,
+      box-shadow 180ms ease,
+      transform 180ms ease,
+      opacity 180ms ease;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid rgba(15, 118, 110, 0.4);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-shell {
+    @apply relative py-20 sm:py-24 lg:py-28;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-accent shadow-sm;
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-4xl lg:text-5xl;
+  }
+
+  .section-copy {
+    @apply max-w-2xl text-base leading-8 text-slate-600 sm:text-lg;
+  }
+
+  .surface-card {
+    @apply rounded-[28px] border border-slate-200/80 bg-white/85 shadow-soft backdrop-blur;
+  }
+
+  .surface-card-strong {
+    @apply rounded-[32px] border border-slate-200 bg-white shadow-soft;
+  }
+
+  .ghost-panel {
+    @apply rounded-[24px] border border-white/70 bg-white/55 shadow-[0_14px_40px_rgba(15,23,42,0.06)] backdrop-blur;
+  }
+
+  .button-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(15,118,110,0.24)] hover:-translate-y-0.5 hover:bg-accent-deep;
+  }
+
+  .button-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50;
+  }
+
+  .pill-tag {
+    @apply inline-flex items-center rounded-full border border-accent/10 bg-accent-soft px-3 py-1 text-xs font-medium text-accent-deep;
+  }
+
+  .grid-lines {
+    background-image: theme(backgroundImage.hero-grid);
+    background-size: 34px 34px;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 650ms ease,
+      transform 650ms ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

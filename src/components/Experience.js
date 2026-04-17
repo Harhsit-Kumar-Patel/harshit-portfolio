@@ -1,94 +1,113 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { FiArrowUpRight, FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/fi';
+
+const experiences = [
+  {
+    title: 'LLM Post-Training Intern',
+    company: 'Ethara AI',
+    location: 'Remote',
+    period: 'Jan 2026 - Present',
+    summary:
+      'Contributing to post-training optimization work for Large Language Models with a focus on reasoning quality, alignment, and response accuracy.',
+    responsibilities: [
+      'Evaluate model outputs for coherence, instruction-following, and factual reliability across diverse prompts.',
+      'Support supervised fine-tuning workflows, structured feedback generation, and dataset refinement.',
+      'Help improve LLM reasoning quality and alignment through careful prompt review and response analysis.',
+    ],
+  },
+  {
+    title: 'Product Manager - Research & EdTech',
+    company: 'Institute for Global Research on Public Policy and the SDGs',
+    location: 'Remote',
+    period: 'Jan 2026 - Present',
+    summary:
+      'Led market and user research on AI adoption and EdTech trends to inform product discovery and roadmap decisions.',
+    responsibilities: [
+      'Translated research insights into structured product recommendations aligned with academic and policy objectives.',
+      'Collaborated cross-functionally with research, academic, and operational stakeholders.',
+      'Connected research outcomes to product direction for education-focused initiatives.',
+    ],
+  },
+  {
+    title: 'Computer Faculty',
+    company: 'Sant Sai Shikshan Sansthan',
+    location: 'Varanasi',
+    period: 'Jul 2025',
+    summary:
+      'Delivered applied computer science instruction and tailored curriculum based on student learning gaps.',
+    responsibilities: [
+      'Built lesson delivery around practical understanding rather than rote theory.',
+      'Adapted teaching style to learner needs and helped students gain confidence in core computing concepts.',
+      'Strengthened communication and curriculum design through classroom instruction.',
+    ],
+  },
+];
 
 const Experience = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const experiences = [
-    { // --- NEW EXPERIENCE ---
-      title: "Product Manager - Ed Tech",
-      company: "International Institute Of SDGs & Public Policy Research",
-      location: "Remote", // Added "Remote" as a placeholder
-      period: "Sep 2025 – Present",
-      responsibilities: [
-        "Collaborated with cross-functional teams to define product requirements and roadmap for EdTech solutions aligned with UN SDGs.",
-        "Conducted market research and competitor analysis to identify emerging trends and innovation opportunities in education technology.",
-        "Assisted in developing, testing, and improving product features to enhance user engagement and learning experience."
-      ]
-    },
-    { // --- EXISTING EXPERIENCE ---
-      title: "Computer Faculty",
-      company: "Sant Sai Shikshan Sansthan",
-      location: "Varanasi",
-      period: "Jul 2025",
-      responsibilities: [
-        "Developed comprehensive lesson plans for computer science curriculum.",
-        "Provided one-on-one support to students for better understanding.",
-        "Created engaging activities to enhance the learning experience.",
-      ]
-    }
-  ];
+  const isInView = useInView(ref, { once: true, margin: '-120px' });
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="site-section">
+      <div className="site-container">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Professional Experience
-          </h2>
-          <p className="text-xl text-gray-600">
-            My journey in the professional world.
+          <div className="max-w-2xl">
+            <span className="section-kicker">Experience</span>
+            <h2 className="section-title">Experience across LLM evaluation, product research, and applied teaching.</h2>
+          </div>
+          <p className="max-w-xl section-copy">
+            My recent work spans post-training for LLMs, research-led product work in EdTech, and teaching-based execution on the ground.
           </p>
         </motion.div>
 
-        <div className="relative max-w-3xl mx-auto">
-          <div className="absolute left-1/2 top-0 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
+        <div className="grid gap-6">
           {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
+            <motion.article
+              key={exp.title}
+              initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 + index * 0.2 }}
-              className="relative mb-12"
+              transition={{ duration: 0.6, delay: index * 0.12 }}
+              className="editorial-card grid gap-6 lg:grid-cols-[220px_1fr]"
             >
-              <div className="absolute left-1/2 top-1 w-4 h-4 mt-1 bg-primary-500 rounded-full border-4 border-white transform -translate-x-1/2"></div>
-              <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-200">
-                <div className="flex items-center mb-3">
-                  <FiBriefcase className="w-6 h-6 mr-3 text-primary-500" />
-                  <h3 className="text-2xl font-bold text-gray-900">
-                    {exp.title}
-                  </h3>
-                </div>
-                <p className="text-lg font-semibold text-gray-700 mb-3">
-                  {exp.company}
-                </p>
-                <div className="flex flex-wrap items-center text-sm text-gray-500 mb-4 space-x-4">
-                  <div className="flex items-center">
-                    <FiCalendar className="w-4 h-4 mr-2" />
+              <div className="rounded-[24px] bg-stone-900 p-6 text-stone-50">
+                <FiBriefcase className="h-7 w-7 text-[var(--accent-soft)]" />
+                <p className="mt-8 text-xs uppercase tracking-[0.22em] text-stone-400">Role</p>
+                <h3 className="mt-2 text-2xl font-bold text-stone-50">{exp.title}</h3>
+                <p className="mt-3 text-sm text-stone-300">{exp.company}</p>
+              </div>
+
+              <div>
+                <div className="flex flex-wrap gap-4 text-sm text-stone-500">
+                  <div className="flex items-center gap-2">
+                    <FiCalendar className="h-4 w-4" />
                     <span>{exp.period}</span>
                   </div>
-                  <div className="flex items-center">
-                    <FiMapPin className="w-4 h-4 mr-2" />
+                  <div className="flex items-center gap-2">
+                    <FiMapPin className="h-4 w-4" />
                     <span>{exp.location}</span>
                   </div>
                 </div>
-                <ul className="space-y-2 list-disc list-inside text-gray-600">
-                  {exp.responsibilities.map((resp, idx) => (
-                    <li key={idx}>{resp}</li>
+                <p className="mt-5 max-w-3xl text-base leading-7 text-stone-700">{exp.summary}</p>
+                <div className="mt-6 grid gap-3">
+                  {exp.responsibilities.map((responsibility) => (
+                    <div
+                      key={responsibility}
+                      className="flex items-start gap-3 rounded-[20px] border border-stone-900/8 bg-white/60 px-4 py-4"
+                    >
+                      <FiArrowUpRight className="mt-1 h-4 w-4 flex-shrink-0 text-[var(--accent)]" />
+                      <p className="text-sm leading-7 text-stone-700">{responsibility}</p>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

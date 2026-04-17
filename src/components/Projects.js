@@ -1,76 +1,99 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
+
+const project = {
+  title: 'PathByte - Career Growth Platform',
+  description:
+    'Built and deployed a career guidance platform with structured learning paths, onboarding flows, and progress tracking.',
+  technologies: ['Product vision', 'User journey design', 'Execution roadmap', 'Onboarding flows', 'Progress tracking'],
+  github: 'https://github.com/Harhsit-Kumar-Patel/PathByte',
+  demo: 'https://pathbyte.netlify.app/',
+  challenge: 'Career growth support is often scattered, generic, and hard to translate into a clear learning path.',
+  response: 'PathByte turns career planning into a guided system with structured progression, clearer onboarding, and trackable momentum.',
+};
 
 const Projects = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const projects = [
-    {
-      title: "PathByte",
-      description: "A full-stack career development platform to help professionals navigate their career paths with personalized roadmaps.",
-      technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "TailwindCSS"],
-      github: "https://github.com/Harhsit-Kumar-Patel/PathByte",
-      demo: "https://pathbyte.netlify.app/"
-    }
-  ];
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="projects" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="site-section">
+      <div className="site-container">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 28 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-14 max-w-3xl"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Featured Project
-          </h2>
-          <p className="text-xl text-gray-600">
-            An innovative solution I've built.
+          <span className="section-kicker">Featured Project</span>
+          <h2 className="section-title">A founder-led build shaped by product vision, user journey thinking, and execution.</h2>
+          <p className="mt-5 section-copy">
+            This project reflects how I define a product vision, translate it into a user journey, and carry the roadmap from ideation to live deployment.
           </p>
         </motion.div>
 
-        {projects.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="max-w-4xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-200"
-          >
-            <div className="p-8">
-              <h3 className="text-3xl font-bold text-gray-900 mb-3">
-                {project.title}
-              </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.technologies.map((tech, idx) => (
-                  <span key={idx} className="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">
-                    {tech}
-                  </span>
-                ))}
+        <motion.article
+          initial={{ opacity: 0, y: 32 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.12 }}
+          className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]"
+        >
+          <div className="dark-panel">
+            <p className="grid-label text-stone-400">Product spotlight</p>
+            <h3 className="mt-4 text-4xl font-bold text-stone-50">{project.title}</h3>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-stone-200">{project.description}</p>
+
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+                <p className="grid-label text-stone-400">Problem</p>
+                <p className="mt-3 text-sm leading-7 text-stone-200">{project.challenge}</p>
               </div>
-              <div className="flex flex-wrap gap-4">
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-full font-semibold transition-colors">
-                  <FiGithub />
-                  <span>View Code</span>
-                </a>
-                <a href={project.demo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gradient-to-r from-primary-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-full font-semibold transition-opacity">
-                  <FiExternalLink />
-                  <span>Live Demo</span>
-                </a>
+              <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+                <p className="grid-label text-stone-400">Approach</p>
+                <p className="mt-3 text-sm leading-7 text-stone-200">{project.response}</p>
               </div>
             </div>
-          </motion.div>
-        ))}
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={project.demo} target="_blank" rel="noopener noreferrer" className="accent-button gap-2">
+                <FiExternalLink className="h-4 w-4" />
+                Live Demo
+              </a>
+              <a href={project.github} target="_blank" rel="noopener noreferrer" className="outline-button gap-2 border-white/15 bg-white/5 text-stone-100">
+                <FiGithub className="h-4 w-4" />
+                View Code
+              </a>
+            </div>
+          </div>
+
+          <div className="editorial-card">
+            <p className="grid-label">Stack</p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {project.technologies.map((tech) => (
+                <span key={tech} className="pill">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-10 space-y-5">
+              <div className="rounded-[24px] border border-stone-900/8 bg-white/60 p-5">
+                <p className="grid-label">Why it matters</p>
+                <p className="mt-3 text-sm leading-7 text-stone-700">
+                  It shows how I connect product framing with real execution instead of stopping at a concept or mockup.
+                </p>
+              </div>
+              <div className="rounded-[24px] border border-stone-900/8 bg-white/60 p-5">
+                <p className="grid-label">What it signals</p>
+                <p className="mt-3 text-sm leading-7 text-stone-700">
+                  I like building products with clear structure, practical user value, and enough depth to validate the idea in the real world.
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.article>
       </div>
     </section>
   );

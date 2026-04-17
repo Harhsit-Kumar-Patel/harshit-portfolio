@@ -1,138 +1,99 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { FiBookOpen, FiCalendar, FiMapPin, FiAward } from 'react-icons/fi';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { FiAward, FiBookOpen, FiCalendar, FiMapPin } from 'react-icons/fi';
+
+const education = [
+  {
+    degree: 'B.Tech - Computer Science and Business Systems',
+    institution: 'SRM Institute of Science and Technology',
+    location: 'Chennai, India',
+    period: '2023 - 2027',
+    grade: '8.67 CGPA',
+    status: 'Pursuing',
+    icon: FiBookOpen,
+  },
+  {
+    degree: 'Higher Secondary (10+2)',
+    institution: 'Little Flower House',
+    location: 'Varanasi, India',
+    period: '2022',
+    grade: '82.2% (2022)',
+    status: 'Completed',
+    icon: FiAward,
+  },
+  {
+    degree: 'Secondary (10th)',
+    institution: 'Sunbeam School',
+    location: 'Ghazipur, India',
+    period: '2020',
+    grade: '87.5% (2020)',
+    status: 'Completed',
+    icon: FiAward,
+  },
+];
 
 const Education = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const education = [
-    {
-      degree: "Bachelor of Technology (B.Tech)",
-      institution: "SRM Institute of Science and Technology",
-      location: "Chennai, India",
-      period: "2023 - 2027",
-      cgpa: "8.67 CGPA",
-      status: "Pursuing",
-      icon: FiBookOpen,
-      color: "from-blue-500 to-blue-600"
-    },
-    {
-      degree: "Higher Secondary (12th)",
-      institution: "Little Flower House",
-      location: "Varanasi, India",
-      period: "2021 - 2022",
-      cgpa: "82.2%",
-      status: "Completed",
-      icon: FiAward,
-      color: "from-green-500 to-green-600"
-    },
-    {
-      degree: "Secondary (10th)",
-      institution: "Sunbeam School",
-      location: "Ghazipur, India",
-      period: "2019 - 2020",
-      cgpa: "87.5%",
-      status: "Completed",
-      icon: FiAward,
-      color: "from-purple-500 to-purple-600"
-    }
-  ];
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section id="education" className="py-20 bg-white dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="education" className="site-section">
+      <div className="site-container">
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 28 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="mb-14 max-w-3xl"
         >
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Education
-          </motion.h2>
-          <motion.p
-            className="text-xl text-gray-600 dark:text-gray-300"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Academic journey and achievements
-          </motion.p>
+          <span className="section-kicker">Education</span>
+          <h2 className="section-title">Academic grounding in computer science, business systems, and applied problem solving.</h2>
+          <p className="mt-5 section-copy">
+            My education pairs strong technical foundations with the systems thinking that supports product, AI, and real-world execution.
+          </p>
         </motion.div>
 
-        <div className="space-y-8">
-          {education.map((edu, index) => {
-            const IconComponent = edu.icon;
+        <div className="grid gap-6">
+          {education.map((item, index) => {
+            const Icon = item.icon;
+
             return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
-                className="glass dark:glass-dark p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300"
+              <motion.article
+                key={item.degree}
+                initial={{ opacity: 0, y: 28 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="editorial-card grid gap-6 lg:grid-cols-[120px_1fr_auto]"
               >
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-                  <div className="flex items-start space-x-6 flex-1">
-                    <motion.div
-                      className={`p-4 rounded-2xl bg-gradient-to-r ${edu.color} text-white shadow-lg`}
-                      whileHover={{ scale: 1.05, rotate: 5 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <IconComponent className="w-8 h-8" />
-                    </motion.div>
-                    
-                    <div className="flex-1">
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                          {edu.degree}
-                        </h3>
-                        <div className="flex items-center space-x-2">
-                          <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                            edu.status === 'Pursuing' 
-                              ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300'
-                              : 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300'
-                          }`}>
-                            {edu.status}
-                          </span>
-                        </div>
-                      </div>
-                      
-                      <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-3">
-                        {edu.institution}
-                      </h4>
-                      
-                      <div className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-300 mb-4">
-                        <div className="flex items-center space-x-1">
-                          <FiMapPin className="w-4 h-4" />
-                          <span>{edu.location}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <FiCalendar className="w-4 h-4" />
-                          <span>{edu.period}</span>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center space-x-2">
-                        <span className="text-lg font-semibold text-gray-700 dark:text-gray-300">
-                          Grade:
-                        </span>
-                        <span className="text-xl font-bold gradient-text">
-                          {edu.cgpa}
-                        </span>
-                      </div>
+                <div className="flex h-24 w-24 items-center justify-center rounded-[28px] bg-stone-900 text-stone-50">
+                  <Icon className="h-10 w-10" />
+                </div>
+
+                <div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <h3 className="text-2xl font-bold text-stone-950">{item.degree}</h3>
+                    <span className={`pill ${item.status === 'Pursuing' ? 'bg-[rgba(36,91,91,0.14)] text-[var(--teal)]' : ''}`}>
+                      {item.status}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-lg font-medium text-stone-700">{item.institution}</p>
+                  <div className="mt-4 flex flex-wrap gap-4 text-sm text-stone-500">
+                    <div className="flex items-center gap-2">
+                      <FiMapPin className="h-4 w-4" />
+                      <span>{item.location}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <FiCalendar className="h-4 w-4" />
+                      <span>{item.period}</span>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+
+                <div className="rounded-[24px] border border-stone-900/8 bg-white/60 px-6 py-5 text-left lg:min-w-[150px]">
+                  <p className="grid-label">Grade</p>
+                  <p className="mt-3 text-2xl font-bold text-[var(--accent-deep)]">{item.grade}</p>
+                </div>
+              </motion.article>
             );
           })}
         </div>

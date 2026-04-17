@@ -11,9 +11,9 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="bg-white">
+    <div className="app-shell">
       <Navigation />
-      <main>
+      <main className="relative">
         <Hero />
         <Experience />
         <Projects />

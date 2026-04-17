@@ -1,74 +1,120 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiEye } from 'react-icons/fi';
+import { FiArrowRight, FiEye, FiGithub, FiLinkedin } from 'react-icons/fi';
+
+const highlights = [
+  { label: 'Focus', value: 'Product discovery, AI evaluation, and execution-driven problem solving' },
+  { label: 'Current lane', value: 'LLM post-training work paired with EdTech and research-led product work' },
+  { label: 'Strength', value: 'Turning research, feedback, and ambiguity into structured product direction' },
+];
+
+const metrics = [
+  { value: '3', label: 'Projects & case studies' },
+  { value: '8', label: 'Core certifications' },
+  { value: '8.67', label: 'Current CGPA' },
+];
 
 const Hero = () => {
-    return (
-        <section id="home" className="relative w-full min-h-screen flex items-center justify-center bg-white overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100"></div>
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                    className="text-center lg:text-left"
-                >
-                    <h1 className="text-5xl md:text-7xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                        Harshit Kumar Patel
-                    </h1>
-                    <p className="text-2xl md:text-3xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-indigo-500 mb-6">
-                        Aspiring Product Manager
-                    </p>
-                    <p className="max-w-xl mx-auto lg:mx-0 text-lg text-gray-600 mb-8 leading-relaxed">
-                        A passionate product enthusiast bridging the gap between user needs and business goals through technology and user-centric design.
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                        <a
-                            href="/resume.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center space-x-2 w-full sm:w-auto bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-primary-500/40 transition-all duration-300 transform hover:scale-105"
-                        >
-                            <FiEye className="w-5 h-5" />
-                            <span>View Resume</span>
-                        </a>
-                        <div className="flex items-center space-x-6">
-                            <a href="https://github.com/Harhsit-Kumar-Patel" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary-500 transition-colors transform hover:scale-110">
-                                <FiGithub className="w-8 h-8" />
-                            </a>
-                            <a href="https://www.linkedin.com/in/harshit-patel-900729205/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary-500 transition-colors transform hover:scale-110">
-                                <FiLinkedin className="w-8 h-8" />
-                            </a>
-                        </div>
-                    </div>
-                </motion.div>
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
-                    className="hidden lg:flex items-center justify-center"
-                >
-                    <div className="relative w-96 h-96">
-                        <motion.div
-                            animate={{ rotate: 360 }}
-                            transition={{ repeat: Infinity, duration: 20, ease: "linear" }}
-                            className="absolute inset-0 border-4 border-primary-500/20 rounded-full"
-                        ></motion.div>
-                        <motion.div
-                            animate={{ rotate: -360 }}
-                            transition={{ repeat: Infinity, duration: 30, ease: "linear" }}
-                            className="absolute inset-4 border-4 border-indigo-500/20 rounded-full"
-                        ></motion.div>
-                        <div className="absolute inset-12 bg-white rounded-full shadow-2xl flex items-center justify-center">
-                            <p className="text-8xl">
-                                👨‍💻
-                            </p>
-                        </div>
-                    </div>
-                </motion.div>
+  return (
+    <section id="home" className="site-section relative overflow-hidden pt-36 sm:pt-40">
+      <div className="pointer-events-none absolute left-[-8%] top-24 h-56 w-56 rounded-full bg-[rgba(201,108,74,0.16)] blur-3xl" />
+      <div className="pointer-events-none absolute right-[-6%] top-10 h-72 w-72 rounded-full bg-[rgba(36,91,91,0.14)] blur-3xl" />
+
+      <div className="site-container grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <motion.div
+          initial={{ opacity: 0, y: 26 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className="section-kicker">Computer Science Undergrad | Product & AI</span>
+          <h1 className="max-w-4xl text-5xl font-bold leading-[0.95] tracking-[-0.05em] text-stone-950 md:text-7xl">
+            Building at the intersection of product thinking, AI systems, and practical execution.
+          </h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-600 md:text-xl">
+            I&apos;m Harshit Kumar Patel, a Computer Science undergrad and Product &amp; AI enthusiast with experience in
+            LLM post-training, product research, and execution-driven problem solving across EdTech and applied AI environments.
+          </p>
+
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="accent-button gap-2"
+            >
+              <FiEye className="h-4 w-4" />
+              View Resume
+            </a>
+            <a href="#projects" className="outline-button gap-2">
+              Featured Work
+              <FiArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          <div className="mt-8 flex items-center gap-4">
+            <a
+              href="https://github.com/Harhsit-Kumar-Patel"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-stone-900/10 bg-white/70 text-stone-700 transition hover:-translate-y-1 hover:text-[var(--accent-deep)]"
+            >
+              <FiGithub className="h-5 w-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/harshit-patel-900729205/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-stone-900/10 bg-white/70 text-stone-700 transition hover:-translate-y-1 hover:text-[var(--accent-deep)]"
+            >
+              <FiLinkedin className="h-5 w-5" />
+            </a>
+            <p className="text-sm uppercase tracking-[0.24em] text-stone-500">Open to product, AI, and applied research roles</p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 34 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, delay: 0.12 }}
+          className="space-y-6"
+        >
+          <div className="dark-panel">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="grid-label text-stone-400">Current snapshot</p>
+                <h2 className="mt-3 text-3xl font-bold text-stone-50">Computer Science Undergrad - Product &amp; AI Enthusiast</h2>
+              </div>
+              <span className="pill bg-white/10 text-stone-100">Chennai, India</span>
             </div>
-        </section>
-    );
+
+            <div className="mt-8 grid gap-4">
+              {highlights.map((item) => (
+                <div key={item.label} className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+                  <p className="grid-label text-stone-400">{item.label}</p>
+                  <p className="mt-2 text-sm leading-7 text-stone-200">{item.value}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-3">
+            {metrics.map((item, index) => (
+              <motion.div
+                key={item.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                className="editorial-card"
+              >
+                <p className="text-3xl font-bold text-stone-950">{item.value}</p>
+                <p className="mt-2 text-sm uppercase tracking-[0.18em] text-stone-500">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 };
 
 export default Hero;

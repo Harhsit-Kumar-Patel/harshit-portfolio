@@ -1,206 +1,84 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
-import { FiAward, FiEye } from 'react-icons/fi';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { FiArrowUpRight, FiAward } from 'react-icons/fi';
+
+const certifications = [
+  { title: 'Azure AI Engineer', provider: 'Microsoft', status: 'Completed', type: 'AI & Cloud', certificate: '/certificates/microsoft-azure-ai-engineer.pdf' },
+  { title: 'Semantic Kernel', provider: 'Microsoft', status: 'Completed', type: 'AI & Cloud', certificate: '/certificates/microsoft-azure-openai-semantic-kernel.pdf' },
+  { title: 'GitHub Copilot', provider: 'Microsoft', status: 'Completed', type: 'AI & Developer Tools', certificate: '/certificates/microsoft-github-copilot.pdf' },
+  { title: 'Cloud Generative AI Leader', provider: 'Google', status: 'Completed', type: 'AI & Cloud', certificate: '/certificates/Coursera-Google-Cloud-Certificate.pdf' },
+  { title: 'Project Management', provider: 'Google', status: 'Completed', type: 'Product', certificate: '/certificates/google-product-management.pdf' },
+  { title: 'Networking', provider: 'NVIDIA', status: 'Completed', type: 'Technical', certificate: '/certificates/nvidia-networking-coursera.pdf' },
+  { title: 'NLP Basics', provider: 'NVIDIA', status: 'Completed', type: 'Technical', certificate: '/certificates/Coursera-NLP-Certificate.pdf' },
+  { title: 'AI Product Manager', provider: 'Coursera', status: 'Completed', type: 'Product', certificate: '/certificates/microsoft-ai-product-manager.pdf' },
+];
 
 const Certifications = () => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-    const certifications = [
-    {
-      title: "Google Product Management",
-      provider: "Coursera",
-      status: "Pursuing",
-      type: "Professional",
-      color: "from-blue-500 to-blue-600",
-      icon: FiAward,
-      certificate: "/certificates/google-product-management.pdf"
-    },
-    {
-      title: "Microsoft AI Product Manager",
-      provider: "Coursera",
-      status: "Pursuing",
-      type: "Professional",
-      color: "from-green-500 to-green-600",
-      icon: FiAward,
-      certificate: "/certificates/microsoft-ai-product-manager.pdf"
-    },
-    {
-        title: "Google Cloud Generative AI Leader",
-        provider: "Coursera",
-        status: "Completed",
-        type: "Professional",
-        color: "from-yellow-500 to-yellow-600",
-        icon: FiAward,
-        certificate: "/certificates/Coursera-Google-Cloud-Certificate.pdf"
-    },
-    {
-        title: "Nvidia Natural Language Processing Essentials",
-        provider: "Coursera",
-        status: "Completed",
-        type: "Technical",
-        color: "from-teal-500 to-teal-600",
-        icon: FiAward,
-        certificate: "/certificates/Coursera-NLP-Certificate.pdf"
-    },
-    { // --- NEW ---
-      title: "Introduction to Networking",
-      provider: "NVIDIA (Coursera)",
-      status: "Completed",
-      type: "Technical",
-      color: "from-green-600 to-green-700",
-      icon: FiAward,
-      certificate: "/certificates/nvidia-networking-coursera.pdf"
-    },
-    { // --- NEW ---
-      title: "GenSpark GitHub Copilot Learning Path",
-      provider: "Microsoft",
-      status: "Completed",
-      type: "Technical",
-      color: "from-gray-500 to-gray-600",
-      icon: FiAward,
-      certificate: "/certificates/microsoft-github-copilot.pdf"
-    },
-    { // --- NEW ---
-      title: "GenSpark Azure OpenAI and Semantic Kernel",
-      provider: "Microsoft",
-      status: "Completed",
-      type: "Technical",
-      color: "from-blue-600 to-blue-700",
-      icon: FiAward,
-      certificate: "/certificates/microsoft-azure-openai-semantic-kernel.pdf"
-    },
-    { // --- NEW ---
-      title: "GenSpark Azure AI Engineer Certification Path",
-      provider: "Microsoft",
-      status: "Completed",
-      type: "Technical",
-      color: "from-sky-600 to-sky-700",
-      icon: FiAward,
-      certificate: "/certificates/microsoft-azure-ai-engineer.pdf"
-    },
-    {
-      title: "C Programming",
-      provider: "Udemy",
-      status: "Completed",
-      type: "Technical",
-      color: "from-purple-500 to-purple-600",
-      icon: FiAward,
-      certificate: "/certificates/c-programming-udemy.pdf"
-    },
-    {
-      title: "PHP & MySQL",
-      provider: "Udemy",
-      status: "Completed",
-      type: "Technical",
-      color: "from-orange-500 to-orange-600",
-      icon: FiAward,
-      certificate: "/certificates/php-mysql-udemy.pdf"
-    },
-    {
-      title: "Modern Programming",
-      provider: "Udemy",
-      status: "Completed",
-      type: "Technical",
-      color: "from-red-500 to-red-600",
-      icon: FiAward,
-      certificate: "/certificates/modern-programming-udemy.pdf"
-    },
-    {
-      title: "Mastering C & C++",
-      provider: "Udemy",
-      status: "Completed",
-      type: "Technical",
-      color: "from-indigo-500 to-indigo-600",
-      icon: FiAward,
-      certificate: "/certificates/mastering-c-cpp-udemy.pdf"
-    }
-  ];
+  return (
+    <section id="certifications" className="site-section">
+      <div className="site-container">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 28 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="mb-14 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between"
+        >
+          <div className="max-w-2xl">
+            <span className="section-kicker">Certifications</span>
+            <h2 className="section-title">Continuous learning across product, AI, cloud, and developer tooling.</h2>
+          </div>
+          <p className="max-w-xl section-copy">
+            Certifications help me deepen both the product and technical sides of my work, especially around AI systems and practical execution.
+          </p>
+        </motion.div>
 
-    const groupedCertifications = certifications.reduce((acc, cert) => {
-        if (!acc[cert.type]) {
-            acc[cert.type] = [];
-        }
-        acc[cert.type].push(cert);
-        return acc;
-    }, {});
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {certifications.map((cert, index) => (
+            <motion.article
+              key={cert.title}
+              initial={{ opacity: 0, y: 26 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.55, delay: index * 0.05 }}
+              className="editorial-card flex h-full flex-col"
+            >
+              <div className="flex items-start justify-between gap-4">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-stone-900 text-stone-50">
+                  <FiAward className="h-5 w-5" />
+                </span>
+                <span className={`pill ${cert.status === 'Completed' ? 'bg-[rgba(36,91,91,0.14)] text-[var(--teal)]' : ''}`}>
+                  {cert.status}
+                </span>
+              </div>
 
-    return (
-        <section id="certifications" className="py-20 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <motion.div
-                    ref={ref}
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                        Certifications
-                    </h2>
-                    <p className="text-xl text-gray-600">
-                        My commitment to continuous learning.
-                    </p>
-                </motion.div>
+              <div className="mt-6">
+                <p className="grid-label">{cert.type}</p>
+                <h3 className="mt-3 text-xl font-bold text-stone-950">{cert.title}</h3>
+                <p className="mt-2 text-sm text-stone-600">{cert.provider}</p>
+              </div>
 
-                <div className="space-y-12">
-                    {Object.entries(groupedCertifications).map(([type, certs], typeIndex) => (
-                        <motion.div
-                            key={type}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.6, delay: 0.2 + typeIndex * 0.2 }}
-                        >
-                            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-                                {type} Certifications
-                            </h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                                {certs.map((cert, index) => {
-                                    const Icon = cert.icon;
-                                    return (
-                                        <motion.div
-                                            key={index}
-                                            initial={{ opacity: 0, y: 50 }}
-                                            animate={isInView ? { opacity: 1, y: 0 } : {}}
-                                            transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                                            className="bg-white p-6 rounded-2xl shadow-lg border border-gray-200 flex flex-col"
-                                        >
-                                            <div className="flex items-start space-x-4 mb-4">
-                                                <div className={`p-3 rounded-xl bg-gradient-to-r ${cert.color} text-white shadow-md`}>
-                                                    <Icon className="w-6 h-6" />
-                                                </div>
-                                                <div className="flex-1">
-                                                    <h4 className="text-lg font-semibold text-gray-900">
-                                                        {cert.title}
-                                                    </h4>
-                                                    <p className="text-gray-600">
-                                                        {cert.provider}
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="mt-auto flex items-center justify-between pt-4 border-t border-gray-200">
-                                                <span className={`px-3 py-1 text-xs font-medium rounded-full ${cert.status === 'Pursuing' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'}`}>
-                                                    {cert.status}
-                                                </span>
-                                                {cert.status === 'Completed' && (
-                                                    <a href={cert.certificate} target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-primary-500 hover:text-primary-600 font-semibold transition-colors">
-                                                        <FiEye />
-                                                        <span>View</span>
-                                                    </a>
-                                                )}
-                                            </div>
-                                        </motion.div>
-                                    );
-                                })}
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+              <div className="mt-8">
+                {cert.certificate ? (
+                  <a
+                    href={cert.certificate}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--accent-deep)] transition hover:text-[var(--accent)]"
+                  >
+                    View certificate
+                    <FiArrowUpRight className="h-4 w-4" />
+                  </a>
+                ) : <p className="text-sm font-medium text-stone-500">Listed on resume</p>}
+              </div>
+            </motion.article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Certifications;
