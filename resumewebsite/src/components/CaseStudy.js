@@ -40,7 +40,7 @@ const CaseStudy = () => {
                                 PathByte Case Study
                             </h3>
                             <p className="text-gray-600 mb-6">
-                                An AI-powered career roadmap platform that revolutionizes how developers navigate their tech journey.
+                                A roadmap-first career guidance platform that helps students follow structured learning paths, built using customer discovery.
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-4">
@@ -68,7 +68,7 @@ const CaseStudy = () => {
                                 Inventura Case Study
                             </h3>
                             <p className="text-gray-600 mb-6">
-                                A smart inventory assistant for small vendors in emerging markets, designed to reduce waste and increase profitability.
+                                An AI-powered inventory assistant for small and medium businesses, including AI-based demand forecasting and offline-first workflows.
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-4">
@@ -92,7 +92,7 @@ const CaseStudy = () => {
                                 ConvoHub – Full Case Study
                             </h3>
                             <p className="text-gray-600 mb-6">
-                                Where students and professionals connect, collaborate, and grow.
+                                An academic communication platform separating institutional announcements from peer discussions to reduce signal loss.
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-4">

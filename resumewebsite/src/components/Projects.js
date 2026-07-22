@@ -10,16 +10,29 @@ const Projects = () => {
 
   const projects = [
     {
+      title: "AI Product Execution Copilot",
+      description: "An AI SaaS workflow that converts meeting transcripts into PRDs, user stories, Jira tickets, and execution plans to streamline documentation.",
+      period: "Jan 2026",
+      technologies: ["LLMs", "Prompt Engineering", "Workflow Design", "AI Integration", "Product Analytics"],
+      features: [
+        "Converts unstructured meeting transcripts into structured PRDs, user stories, and execution plans",
+        "Mapped the product lifecycle from discovery through MVP to identify execution bottlenecks",
+        "Defined success metrics focused on documentation efficiency and developer handoff speed",
+        "Conducted user research with product managers to validate the automated output formats"
+      ],
+      github: "https://github.com/Harhsit-Kumar-Patel",
+      demo: "https://github.com/Harhsit-Kumar-Patel"
+    },
+    {
       title: "PathByte",
-      description: "A comprehensive full-stack career development platform designed to help professionals navigate their career paths with personalized roadmaps and market insights.",
+      description: "A roadmap-first career guidance platform that helps students follow structured learning paths and avoid decision fatigue.",
       period: "Sept 2025",
       technologies: ["React", "TypeScript", "Node.js", "PostgreSQL", "JWT", "TailwindCSS"],
       features: [
-        "Personalized career roadmaps based on user goals",
-        "Real-time market analysis and job trends",
-        "RESTful API with secure authentication",
-        "Comprehensive error handling and validation",
-        "Fully responsive design for all devices"
+        "Built and launched a roadmap-first career guidance platform helping students follow structured learning paths",
+        "Ran customer discovery interviews to pinpoint learning fragmentation and student decision fatigue",
+        "Designed and implemented onboarding, personalized learning journeys, and progress tracking",
+        "Successfully scoped the MVP, verified monetization opportunities, and launched live"
       ],
       github: "https://github.com/Harhsit-Kumar-Patel/PathByte",
       demo: "https://pathbyte.netlify.app/"

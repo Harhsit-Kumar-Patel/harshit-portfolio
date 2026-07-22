@@ -9,175 +9,216 @@ export const navigationLinks = [
 
 export const caseStudies = [
   {
-    id: "edtech-onboarding",
-    title: "Improving Onboarding for an EdTech App",
-    problemStatement: "New learners were dropping off before reaching their first meaningful action.",
+    id: "ai-copilot",
+    title: "AI Product Execution Copilot",
+    problemStatement: "Product managers spend hours manually converting meeting transcripts into structured PRDs, user stories, and execution plans.",
     summary:
-      "I rethought the onboarding journey to reduce friction, surface value faster, and build confidence during the first session.",
-    tags: ["Growth", "User Research", "Onboarding", "Prioritization"],
-    impact: "Projected 18% lift in first-week activation",
+      "I designed an AI workflow that converts meeting transcripts into PRDs, user stories, Jira tickets, and execution plans, significantly reducing documentation overhead.",
+    tags: ["AI SaaS", "Productivity", "Prompt Engineering", "Workflow Design"],
+    impact: "Automated PRD & Jira ticket generation",
     metrics: [
-      { label: "Time to value", value: "-32%", note: "Reduced by trimming setup steps" },
-      { label: "Activation target", value: "68%", note: "From a 50% baseline scenario" },
-      { label: "Primary lever", value: "Guided path", note: "Matched to learner intent" }
+      { label: "Documentation", value: "-80%", note: "Reduction in manual writing time" },
+      { label: "Key focus", value: "PM SaaS", note: "Aims to remove execution bottlenecks" },
+      { label: "Deliverables", value: "PRDs & Jira", note: "Auto-generated from transcript" }
     ],
     overview:
-      "An onboarding redesign for a learning product where users needed confidence and immediate value before committing to a longer setup flow.",
+      "An AI workflow designed to streamline the product management lifecycle by transforming raw user/team discussion transcripts into structured development artifacts.",
     problem:
-      "Users were being asked for too much information before the product demonstrated value. The result was high drop-off in the first few screens and weak activation.",
+      "Documentation is one of the most time-consuming parts of product management, often leading to delays in handoffs and reduced time spent on actual customer discovery.",
     usersAffected:
-      "First-time student users exploring a course for the first time, especially those arriving from referral links and social campaigns.",
+      "Product Managers, Product Owners, and Scrum Masters who manage product backlogs and documentation pipelines.",
     keyInsight:
-      "Users did not need a perfect profile to begin. They needed a fast path to a personalized first win that proved the app could help them.",
+      "Standard meeting structures map directly to PM documentation sections if parsed using specific multi-shot prompt templates that extract action items, requirements, and constraints.",
     goalSuccessMetric:
-      "Increase onboarding completion and first-week activation while reducing the time between sign-up and first lesson interaction.",
+      "Design a reliable workflow that generates high-fidelity draft PRDs and Jira tickets from typical transcript inputs with minimal PM correction needed.",
     approach: [
-      "Mapped the existing onboarding funnel and identified friction around profile setup.",
-      "Separated critical inputs from optional personalization fields.",
-      "Reframed onboarding around one high-confidence recommendation instead of a long questionnaire."
+      "Mapped the product lifecycle from discovery through MVP to identify documentation bottlenecks.",
+      "Designed prompt structures to extract user requirements and technical criteria.",
+      "Structured output formats to directly align with standard Jira ticket and PRD templates."
     ],
     researchAssumptions: [
-      "Assumed learners wanted proof of relevance before sharing detailed preferences.",
-      "Reviewed qualitative friction themes from usability notes and support-style observations.",
-      "Benchmarked faster onboarding patterns in top learning products."
+      "Assumed target users wanted drafts to edit rather than fully finished final versions.",
+      "Reviewed typical team meeting formats to ensure parser compatibility."
     ],
     prioritizationLogic: [
-      "Focused first on reducing early abandonment because it impacted the largest segment.",
-      "Prioritized changes with low engineering complexity and high expected lift in activation.",
-      "Deferred deeper personalization logic until the core activation loop improved."
+      "Prioritized document structure accuracy over multi-tool integrations in the first iteration.",
+      "Focused on generating high-quality user stories as the core unit of delivery."
     ],
     proposedSolution: [
-      "Introduce a two-step onboarding flow with only essential intent capture.",
-      "Show a tailored starter path immediately after sign-up.",
-      "Use progressive profiling later in the user journey after initial value is shown."
+      "Introduce a structured AI transcript parsing pipeline.",
+      "Generate standard markdown PRDs and developer-ready user stories.",
+      "Format outputs into bulk-uploadable CSVs for Jira import."
     ],
     whyThisSolution:
-      "It improves time-to-value without removing personalization entirely. The flow still collects useful context, but only when the user is ready.",
+      "It leverages LLMs for what they do best (summarization, structured translation) while leaving creative and strategic decisions to the human PM.",
     expectedImpact: [
-      "Higher onboarding completion rates.",
-      "More users reaching their first lesson in the same session.",
-      "Stronger retention signals from early success moments."
+      "Increased execution speed for product teams.",
+      "Less administrative friction in Scrum backlogs."
     ],
     risksTradeoffs: [
-      "Lighter upfront input may reduce short-term recommendation precision.",
-      "The team would need careful measurement to confirm the activation lift is durable."
+      "Model hallucination risks require a mandatory review step by a human PM.",
+      "Different transcript providers might introduce formatting errors."
     ],
     whatILearned:
-      "A strong onboarding experience is often about sequencing, not adding more education. Reducing time-to-value can matter more than explaining every feature upfront."
+      "A successful AI product is less about raw LLM capability and more about framing the workflow so that AI acts as an accelerator, not a complete replacement."
   },
   {
-    id: "student-collaboration",
-    title: "Redesigning a Student Collaboration Workflow",
-    problemStatement: "Important academic updates were being buried inside noisy peer conversations.",
+    id: "pathbyte",
+    title: "PathByte | AI Career Growth Platform",
+    problemStatement: "Students face learning fragmentation and decision fatigue when trying to build a career growth roadmap.",
     summary:
-      "I redesigned the communication structure so students could distinguish urgent academic information from collaboration and social discussion.",
-    tags: ["UX", "Systems Thinking", "Retention", "Information Architecture"],
-    impact: "Estimated 25% reduction in missed high-priority updates",
+      "Built and launched a roadmap-first career guidance platform that helps students follow structured learning paths, using customer discovery to shape the onboarding and learning journeys.",
+    tags: ["Product Discovery", "Onboarding", "Career Growth", "Live Product"],
+    impact: "Live platform with personalized learning paths",
     metrics: [
-      { label: "Core issue", value: "Signal loss", note: "Important notices drowned in chat noise" },
+      { label: "Platform Status", value: "Live", note: "Deployed and active career platform" },
+      { label: "Primary Lever", value: "Guided path", note: "Roadmap-first learning journey" },
+      { label: "User Goal", value: "Curriculum", note: "Reducing fragmentation" }
+    ],
+    overview:
+      "PathByte is a roadmap-first career guidance platform designed to simplify career planning and progress tracking for students.",
+    problem:
+      "Students looking to break into tech or other fields are overwhelmed by fragmented learning resources and struggle to find a structured path to their goals.",
+    usersAffected:
+      "Undergraduate students and career changers looking for a structured, step-by-step curriculum.",
+    keyInsight:
+      "Users do not just need more content; they need a sequential roadmap that shows progress and links directly to concrete, bite-sized tasks.",
+    goalSuccessMetric:
+      "Provide a clear onboarding experience that guides users to choose and stick to a career roadmap, reducing abandonment.",
+    approach: [
+      "Conducted customer discovery interviews to pinpoint student learning fragmentation.",
+      "Designed an intuitive onboarding flow and personalized progress tracking system.",
+      "Scoped the MVP feature set and defined initial monetization and value opportunities."
+    ],
+    researchAssumptions: [
+      "Assumed students are more motivated when they see a visual path to completion.",
+      "Tested visual roadmap layouts with mock student groups."
+    ],
+    prioritizationLogic: [
+      "Prioritized onboarding and path clarity over community features.",
+      "Scoped MVP strictly around learning paths and progress tracking."
+    ],
+    proposedSolution: [
+      "Introduce a simple, goal-based onboarding setup.",
+      "Deliver a personalized, step-by-step career path roadmap.",
+      "Implement simple progress tracking to build user momentum."
+    ],
+    whyThisSolution:
+      "It directly addresses decision fatigue, making career planning feel manageable and encouraging daily engagement.",
+    expectedImpact: [
+      "Improved course completion rate.",
+      "Positive user feedback on curriculum structure and navigation."
+    ],
+    risksTradeoffs: [
+      "Static paths might feel too rigid for advanced learners.",
+      "Needs regular content updates to stay aligned with job markets."
+    ],
+    whatILearned:
+      "Solving fragmentation requires strict curation. Giving users fewer, higher-quality options is often more valuable than giving them unlimited choice."
+  },
+  {
+    id: "convohub",
+    title: "ConvoHub | Academic Communication Platform",
+    problemStatement: "Important academic updates were being buried inside noisy peer conversations and student chats.",
+    summary:
+      "Designed a platform separating institutional announcements from peer discussions, based on user interviews and structured user flows.",
+    tags: ["UX", "Information Architecture", "Case Study", "Student Systems"],
+    impact: "Announcements separated from chat noise",
+    metrics: [
+      { label: "Core issue", value: "Signal loss", note: "Urgent notices drowned in chat noise" },
       { label: "Primary fix", value: "Channel split", note: "Separated announcement types" },
-      { label: "Expected gain", value: "+25%", note: "Faster notice visibility" }
+      { label: "User feedback", value: "Improved", note: "Personas and user flows guided design" }
     ],
     overview:
-      "A case study focused on reorganizing a student communication experience for better clarity, trust, and day-to-day usability.",
+      "A communication platform case study focused on organizing student communication for better information hierarchy and reduced signal loss.",
     problem:
-      "Students relied on a single cluttered dashboard and mixed message feed, which made it difficult to identify urgent academic notices.",
+      "Important administrative and academic notices get lost in general student chats, leading to missed deadlines and confusion.",
     usersAffected:
-      "Students managing classes, peer groups, and administrative communications in the same digital environment.",
+      "Students, class representatives, and academic administrators.",
     keyInsight:
-      "The issue was not message volume alone. It was poor hierarchy. Users needed clearer separation between academic urgency and collaborative discussion.",
+      "The primary issue is lack of hierarchy; users need a clear system that isolates institutional announcements from casual group discussions.",
     goalSuccessMetric:
-      "Improve discoverability of essential updates and reduce the chance that students miss time-sensitive tasks or announcements.",
+      "Design a communication interface where high-priority notices are immediately visible and cannot be bypassed by chat traffic.",
     approach: [
-      "Audited the current message flow and grouped content by urgency and source.",
-      "Created a clearer hierarchy for announcements, collaborative threads, and reminders.",
-      "Redesigned the dashboard around scanning speed instead of feature density."
+      "Conducted user interviews to identify student communication pain points.",
+      "Built detailed user personas and interaction flows.",
+      "Created a feature prioritization plan to guide the interface design."
     ],
     researchAssumptions: [
-      "Students check quickly and often, so scan-friendly hierarchy matters more than deep navigation.",
-      "High-priority content should be distinguishable in under a few seconds.",
-      "Peer collaboration should remain accessible without overpowering institutional updates."
+      "Assumed students prioritize scanability over deep social engagement features during school hours.",
+      "Tested wireframe flows with student user representatives."
     ],
     prioritizationLogic: [
-      "Prioritized clarity and message separation before introducing new engagement features.",
-      "Solved for the largest trust problem first: missing critical information.",
-      "Chose layout changes with strong usability upside and moderate design effort."
+      "Prioritized the announcement layout and notification grouping.",
+      "Deferred complex group messaging features to keep the system simple."
     ],
     proposedSolution: [
-      "Create a dedicated priority lane for deadlines, notices, and academic action items.",
-      "Move peer collaboration into separate contextual spaces.",
-      "Add status cues and digest-style summaries for pending academic actions."
+      "Create a dedicated announcements channel with administrative privileges.",
+      "Establish separate peer-to-peer discussion boards.",
+      "Introduce a simple deadline dashboard for academic deliverables."
     ],
     whyThisSolution:
-      "The redesign addresses the structural issue directly and improves confidence in the platform as a reliable source of important information.",
+      "It separates communication intent clearly, restoring trust in the platform as a reliable channel for critical updates.",
     expectedImpact: [
-      "Better task completion and fewer missed deadlines.",
-      "Higher trust in the platform as a daily academic tool.",
-      "Improved long-term engagement through reduced confusion."
+      "Reduction in missed deadlines.",
+      "Improved scanning speed for daily updates."
     ],
     risksTradeoffs: [
-      "Additional structure can feel rigid if collaboration tools become less visible.",
-      "Users may need a brief adjustment period after the navigation changes."
+      "Over-segmentation might reduce general peer engagement if channels feel too isolated."
     ],
     whatILearned:
-      "Good product decisions often come from clarifying systems, not just improving screens. Information hierarchy can directly affect trust and retention."
+      "Clear system design is often about setting boundaries. Restricting who can post where can dramatically improve communication utility."
   },
   {
-    id: "engagement-loops",
-    title: "Increasing Retention Through Better Engagement Loops",
-    problemStatement: "Users were completing one learning session but failing to build a repeat habit.",
+    id: "inventura",
+    title: "Inventura | AI Inventory Assistant",
+    problemStatement: "Small and medium business retailers struggle with inventory management and demand forecasting.",
     summary:
-      "I designed a lightweight engagement loop focused on momentum, streak reinforcement, and contextual re-entry cues.",
-    tags: ["Retention", "Experimentation", "Analytics", "Behavior Design"],
-    impact: "Modeled 12-15% lift in week-two retention",
+      "Designed a case study for an AI-powered inventory assistant with demand forecasting and offline-first workflows.",
+    tags: ["Case Study", "SMB Tools", "AI", "Offline-first"],
+    impact: "AI demand forecasting for small retailers",
     metrics: [
-      { label: "Retention window", value: "Week 2", note: "Targeted early habit formation" },
-      { label: "Loop trigger", value: "Contextual return", note: "Prompted next best action" },
-      { label: "Expected lift", value: "+15%", note: "Retention upside scenario" }
+      { label: "AI Feature", value: "Forecasting", note: "Predictive inventory ordering" },
+      { label: "Workflow", value: "Offline-first", note: "Tailored to low connectivity" },
+      { label: "Target Market", value: "SMBs", note: "Small and medium businesses" }
     ],
     overview:
-      "A retention-focused concept exploring how learning products can move users from one-time activity toward repeat usage and habit formation.",
+      "Inventura is a conceptual AI-powered inventory assistant that simplifies stock management for small local retailers in emerging markets.",
     problem:
-      "The product had reasonable activation, but engagement weakened after the first session because users lacked a clear reason to return.",
+      "Local retailers lose revenue due to overstocking or stockouts, and they lack complex software or reliable internet connectivity.",
     usersAffected:
-      "Newly activated learners who understood the product but had not yet formed a consistent usage habit.",
+      "Local shop owners and retail vendors.",
     keyInsight:
-      "Users were more likely to return when the next step felt small, contextual, and tied to visible progress rather than generic reminders.",
+      "Local vendors need inventory tools that work with zero lag, work offline, and provide simple, actionable reorder recommendations.",
     goalSuccessMetric:
-      "Improve week-two retention and session repeat rate by creating a clearer re-entry loop after the first value moment.",
+      "Create a workflow that requires minimal manual entry and provides stock advice using simple local data.",
     approach: [
-      "Mapped where motivation dipped after the initial lesson.",
-      "Designed lightweight nudges connected to unfinished progress and achievable next steps.",
-      "Framed the loop around visible momentum instead of notification volume."
+      "Designed an AI-powered inventory assistant including demand forecasting.",
+      "Created offline-first workflows tailored to local retailers with limited connectivity.",
+      "Integrated a community inventory exchange concept to share surplus stock."
     ],
     researchAssumptions: [
-      "Progress visibility is a stronger early habit driver than broad motivational messaging.",
-      "Users are more responsive to prompts tied to a concrete next action.",
-      "The most effective loop would be simple enough to test without major platform changes."
+      "Assumed shop owners prefer a mobile-first interface that mimics simple calculator or messaging designs."
     ],
     prioritizationLogic: [
-      "Selected one repeat-use loop instead of a broad retention program to keep the experiment measurable.",
-      "Focused on interventions that could influence behavior quickly with low implementation complexity.",
-      "Avoided over-engineering loyalty mechanics before validating a core re-entry trigger."
+      "Focused on offline capability and basic stock tracking as critical requirements."
     ],
     proposedSolution: [
-      "Show a clear next-best action after each completed session.",
-      "Reinforce progress with compact streak and milestone states.",
-      "Use contextual reminders that reference unfinished learning paths."
+      "Establish an offline-first local database sync workflow.",
+      "Provide AI-based predictive stock recommendations.",
+      "Include a simple exchange network for nearby retailers."
     ],
     whyThisSolution:
-      "The loop makes returning feel purposeful and achievable. It reduces decision fatigue while reinforcing progress and continuity.",
+      "It brings modern predictive benefits to merchants without requiring enterprise systems or constant internet access.",
     expectedImpact: [
-      "Higher repeat sessions within the first two weeks.",
-      "More users progressing into the habit-forming stage.",
-      "Stronger signal for deeper engagement features later."
+      "Reduced stock waste.",
+      "Increased local supply resilience."
     ],
     risksTradeoffs: [
-      "Overusing reminders could create fatigue if prompts feel generic.",
-      "Short-term retention gains may not translate into long-term learning outcomes without content quality support."
+      "Offline sync conflicts if multiple devices are used simultaneously."
     ],
     whatILearned:
-      "Retention is often shaped by product rhythm. A well-timed next step can be more powerful than adding more features."
+      "Design for extreme environments requires stripping features to the absolute essentials. Offline usability is a feature, not a technical detail."
   }
 ];
 
@@ -215,23 +256,34 @@ export const processFlow = [
 
 export const experiences = [
   {
-    role: "LLM Post-Training Intern",
-    company: "Ethara AI",
-    period: "Jan 2026 - Present",
+    role: "Founder",
+    company: "Nakshatraa.online",
+    period: "Jul 2026 - Present",
     bullets: [
-      "Evaluate LLM outputs for reasoning quality, factual reliability, and instruction-following across varied prompts.",
-      "Support structured feedback workflows that improve alignment and response quality in post-training systems.",
-      "Translate ambiguous model behavior into clearer evaluation signals and refinement opportunities."
+      "Founded and launched an AI-powered consultation platform offering astrology, relationship, and life-guidance services, taking it from concept to a live, customer-facing product.",
+      "Ran customer discovery interviews to validate demand and shape the service offering and pricing.",
+      "Designed the full customer journey, including onboarding, booking, consultation flow, payments, and retention.",
+      "Own the product roadmap end to end: prioritize features based on customer feedback, and drive SEO and organic growth strategy."
     ]
   },
   {
-    role: "Product Manager - Research & EdTech",
-    company: "Institute for Global Research on Public Policy and the SDGs",
-    period: "Jan 2026 - Present",
+    role: "LLM Post-Training Intern",
+    company: "Ethara AI",
+    period: "Jan 2026 - Jun 2026",
     bullets: [
-      "Led market and user research on AI adoption and EdTech needs to inform roadmap direction.",
-      "Converted research findings into structured product recommendations aligned with academic and policy goals.",
-      "Worked cross-functionally with research and operational stakeholders to improve decision clarity."
+      "Evaluated large language model outputs for reasoning quality, factual reliability, and instruction-following across varied prompts.",
+      "Support supervised fine-tuning (SFT) workflows and dataset refinement to improve post-training performance.",
+      "Worked on improving model alignment and response consistency across a wide range of prompts."
+    ]
+  },
+  {
+    role: "Product Research Intern",
+    company: "Institute for Global Research on Public Policy & the SDGs",
+    period: "Jan 2026 - Jun 2026",
+    bullets: [
+      "Conducted market research and product discovery for AI and EdTech initiatives.",
+      "Identified customer pain points through qualitative research and secondary analysis.",
+      "Turned research findings into product recommendations that fed directly into roadmap planning."
     ]
   },
   {
@@ -239,56 +291,62 @@ export const experiences = [
     company: "Sant Sai Shikshan Sansthan",
     period: "Jul 2025",
     bullets: [
-      "Identified student learning friction and adapted curriculum delivery around practical understanding.",
-      "Structured instruction to improve clarity, confidence, and hands-on engagement with technical concepts.",
-      "Strengthened communication and feedback skills through classroom-led problem solving."
+      "Delivered practical, application-based Computer Science instruction and improved student engagement through structured lesson planning."
     ]
   }
 ];
 
 export const skills = [
   {
-    title: "Product Skills",
+    title: "Product Management",
     items: [
-      "Product Strategy",
-      "User Research",
+      "Product discovery",
+      "User research",
+      "Customer interviews",
+      "Product strategy",
       "Roadmapping",
-      "Prioritization",
-      "PRD Writing",
-      "Problem Framing",
-      "Requirement Gathering"
+      "PRDs & user stories",
+      "Feature prioritization",
+      "MVP planning",
+      "Agile/Scrum",
+      "Sprint planning",
+      "Backlog management",
+      "Product analytics",
+      "Go-to-market strategy",
+      "Stakeholder management"
     ]
   },
   {
-    title: "Analytics",
+    title: "AI & Technical",
     items: [
-      "Excel",
-      "SQL",
-      "Funnel Analysis",
-      "KPI Thinking",
-      "Retention Analysis",
-      "Experiment Design"
+      "Large language models (LLMs)",
+      "Prompt engineering",
+      "Prompt evaluation",
+      "AI product development",
+      "AI workflow design",
+      "OpenAI APIs",
+      "Azure AI",
+      "Git & GitHub",
+      "Supabase",
+      "Vercel"
     ]
   },
   {
     title: "Tools",
-    items: ["Figma", "Notion", "Jira", "Google Analytics", "Mixpanel", "Miro"]
-  },
-  {
-    title: "Soft Skills",
     items: [
-      "Communication",
-      "Stakeholder Alignment",
-      "Structured Thinking",
-      "Ownership",
-      "Collaboration",
-      "Presentation"
+      "Figma",
+      "Jira",
+      "Notion",
+      "Miro",
+      "Google Workspace",
+      "Wireframing",
+      "User journey mapping"
     ]
   }
 ];
 
 export const contactLinks = [
-  { label: "Email", value: "harshit.mzp888@gmail.com", href: "mailto:harshit.mzp888@gmail.com" },
+  { label: "Email", value: "work.harshitpatel@gmail.com", href: "mailto:work.harshitpatel@gmail.com" },
   { label: "LinkedIn", value: "linkedin.com/in/harshit-patel-900729205", href: "https://www.linkedin.com/in/harshit-patel-900729205/" },
   { label: "GitHub", value: "github.com/Harhsit-Kumar-Patel", href: "https://github.com/Harhsit-Kumar-Patel" }
 ];

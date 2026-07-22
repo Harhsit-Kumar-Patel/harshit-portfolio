@@ -10,11 +10,11 @@ const Education = () => {
 
   const education = [
     {
-      degree: "Bachelor of Technology (B.Tech)",
+      degree: "Bachelor of Technology (B.Tech, Computer Science and Business Systems)",
       institution: "SRM Institute of Science and Technology",
       location: "Chennai, India",
       period: "2023 - 2027",
-      cgpa: "8.67 CGPA",
+      cgpa: "8.55 CGPA",
       status: "Pursuing",
       icon: FiBookOpen,
       color: "from-blue-500 to-blue-600"

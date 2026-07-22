@@ -8,28 +8,38 @@ const Skills = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // 8 Professional Skills
+  // Product Management Skills
   const professionalSkills = [
-    "Product Strategy",
+    "Product discovery",
+    "User research",
+    "Customer interviews",
+    "Product strategy",
     "Roadmapping",
-    "Project Management",
-    "Market Research",
-    "User Research",
-    "Wireframing (Figma)",
-    "A/B Testing",
-    "Agile Methodologies"
+    "PRDs & user stories",
+    "Feature prioritization",
+    "MVP planning",
+    "Agile/Scrum",
+    "Sprint planning",
+    "Backlog management",
+    "Product analytics",
+    "Go-to-market strategy",
+    "Stakeholder management"
   ];
 
-  // 8 Technical Skills (summarized for balance)
+  // AI & Technical & Tools
   const technicalSkills = [
-    "Programming (C++, Python, Java)",
-    "Generative AI & NLP",
-    "AI Frameworks (Semantic Kernel)",
-    "Web Dev (JS, HTML/CSS, PHP)",
-    "Databases (SQL, MySQL)",
-    "Cloud & Networking (Azure)",
-    "Data Structures & Algorithms",
-    "Dev Tools (Git, GitHub Copilot)"
+    "Large language models (LLMs)",
+    "Prompt engineering",
+    "Prompt evaluation",
+    "AI product development",
+    "AI workflow design",
+    "OpenAI APIs & Azure AI",
+    "Git & GitHub",
+    "Supabase & Vercel",
+    "Figma & Jira",
+    "Notion & Miro",
+    "Google Workspace",
+    "Wireframing & Mapping"
   ];
   
   // Animation for each card
@@ -83,7 +93,7 @@ const Skills = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-              Professional Skills
+              Product Management
             </h3>
             {/* Inner grid: 2 columns for cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -113,7 +123,7 @@ const Skills = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-              Technical Skills
+              AI, Technical & Tools
             </h3>
             {/* Inner grid: 2 columns for cards (IDENTICAL to professional for alignment) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

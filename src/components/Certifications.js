@@ -3,14 +3,14 @@ import { motion, useInView } from 'framer-motion';
 import { FiArrowUpRight, FiAward } from 'react-icons/fi';
 
 const certifications = [
-  { title: 'Azure AI Engineer', provider: 'Microsoft', status: 'Completed', type: 'AI & Cloud', certificate: '/certificates/microsoft-azure-ai-engineer.pdf' },
-  { title: 'Semantic Kernel', provider: 'Microsoft', status: 'Completed', type: 'AI & Cloud', certificate: '/certificates/microsoft-azure-openai-semantic-kernel.pdf' },
-  { title: 'GitHub Copilot', provider: 'Microsoft', status: 'Completed', type: 'AI & Developer Tools', certificate: '/certificates/microsoft-github-copilot.pdf' },
-  { title: 'Cloud Generative AI Leader', provider: 'Google', status: 'Completed', type: 'AI & Cloud', certificate: '/certificates/Coursera-Google-Cloud-Certificate.pdf' },
-  { title: 'Project Management', provider: 'Google', status: 'Completed', type: 'Product', certificate: '/certificates/google-product-management.pdf' },
-  { title: 'Networking', provider: 'NVIDIA', status: 'Completed', type: 'Technical', certificate: '/certificates/nvidia-networking-coursera.pdf' },
-  { title: 'NLP Basics', provider: 'NVIDIA', status: 'Completed', type: 'Technical', certificate: '/certificates/Coursera-NLP-Certificate.pdf' },
-  { title: 'AI Product Manager', provider: 'Coursera', status: 'Completed', type: 'Product', certificate: '/certificates/microsoft-ai-product-manager.pdf' },
+  { title: 'Microsoft Azure AI Engineer Associate', provider: 'Microsoft', status: 'Completed', type: 'Artificial Intelligence', certificate: '/certificates/microsoft-azure-ai-engineer.pdf' },
+  { title: 'Microsoft Semantic Kernel', provider: 'Microsoft', status: 'Completed', type: 'Artificial Intelligence', certificate: '/certificates/microsoft-azure-openai-semantic-kernel.pdf' },
+  { title: 'GitHub Copilot', provider: 'Microsoft', status: 'Completed', type: 'Artificial Intelligence', certificate: '/certificates/microsoft-github-copilot.pdf' },
+  { title: 'Google Cloud Generative AI Leader', provider: 'Google', status: 'Completed', type: 'Artificial Intelligence', certificate: '/certificates/Coursera-Google-Cloud-Certificate.pdf' },
+  { title: 'Google Project Management', provider: 'Google', status: 'Completed', type: 'Product Management', certificate: '/certificates/google-product-management.pdf' },
+  { title: 'NVIDIA Networking', provider: 'NVIDIA', status: 'Completed', type: 'Technical', certificate: '/certificates/nvidia-networking-coursera.pdf' },
+  { title: 'NVIDIA NLP Fundamentals', provider: 'NVIDIA', status: 'Completed', type: 'Technical', certificate: '/certificates/Coursera-NLP-Certificate.pdf' },
+  { title: 'AI Product Management', provider: 'Coursera', status: 'Completed', type: 'Product Management', certificate: '/certificates/microsoft-ai-product-manager.pdf' },
 ];
 
 const Certifications = () => {

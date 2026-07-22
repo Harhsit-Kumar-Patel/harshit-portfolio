@@ -39,7 +39,7 @@ const Summary = () => {
                 animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Practical Engineer with significant experience in process design, delivering innovative solutions that optimize processes and align with business objectives. Passionate about creating impactful products and leading cross-functional teams to achieve exceptional results.
+                Computer Science undergraduate with hands-on product management experience across AI product development, customer research, and startup execution. Skilled at running product discovery, writing PRDs and user stories, and turning research into roadmaps. Built and shipped multiple AI-driven products end to end, and founded and operate a live consumer platform from concept through launch. Looking to bring this product and AI background to an Associate Product Manager or AI Product Manager role.
               </motion.p>
               
               <motion.div
@@ -48,7 +48,7 @@ const Summary = () => {
                 animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                {['Product Strategy', 'Process Optimization', 'Team Leadership', 'Innovation'].map((tag, index) => (
+                {['Product Strategy', 'Product Discovery', 'AI Development', 'Customer Research'].map((tag, index) => (
                   <motion.span
                     key={tag}
                     className="px-4 py-2 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium"

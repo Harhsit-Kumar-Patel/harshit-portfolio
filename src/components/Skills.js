@@ -3,16 +3,49 @@ import { motion, useInView } from 'framer-motion';
 
 const skillGroups = [
   {
-    title: 'Product',
-    items: ['Product discovery', 'User research', 'Product strategy', 'Roadmapping', 'Agile', 'Wireframing (Figma)'],
+    title: 'Product Management',
+    items: [
+      'Product discovery',
+      'User research',
+      'Customer interviews',
+      'Product strategy',
+      'Roadmapping',
+      'PRDs & user stories',
+      'Feature prioritization',
+      'MVP planning',
+      'Agile/Scrum',
+      'Backlog management',
+      'Product analytics',
+      'Go-to-market strategy',
+      'Stakeholder management'
+    ],
   },
   {
     title: 'AI & Technical',
-    items: ['Large Language Models (LLMs)', 'Prompt evaluation', 'AI alignment', 'Azure', 'Git & GitHub Copilot', 'Semantic Kernel', 'Basic DSA'],
+    items: [
+      'Large language models (LLMs)',
+      'Prompt engineering',
+      'Prompt evaluation',
+      'AI product development',
+      'AI workflow design',
+      'OpenAI APIs',
+      'Azure AI',
+      'Git & GitHub',
+      'Supabase',
+      'Vercel'
+    ],
   },
   {
-    title: 'Execution',
-    items: ['Structured feedback generation', 'Dataset refinement', 'Cross-functional collaboration', 'Curriculum design', 'Execution planning', 'Clear communication'],
+    title: 'Tools',
+    items: [
+      'Figma',
+      'Jira',
+      'Notion',
+      'Miro',
+      'Google Workspace',
+      'Wireframing',
+      'User journey mapping'
+    ],
   },
 ];
 

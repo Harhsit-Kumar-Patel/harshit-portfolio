@@ -8,114 +8,78 @@ const Certifications = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-    const certifications = [
+  const certifications = [
     {
-      title: "Google Product Management",
+      title: "Google Project Management",
       provider: "Coursera",
-      status: "Pursuing",
-      type: "Professional",
+      status: "Completed",
+      type: "Product Management",
       color: "from-blue-500 to-blue-600",
       icon: FiAward,
       certificate: "/certificates/google-product-management.pdf"
     },
     {
-      title: "Microsoft AI Product Manager",
+      title: "AI Product Management",
       provider: "Coursera",
-      status: "Pursuing",
-      type: "Professional",
+      status: "Completed",
+      type: "Product Management",
       color: "from-green-500 to-green-600",
       icon: FiAward,
       certificate: "/certificates/microsoft-ai-product-manager.pdf"
     },
     {
-        title: "Google Cloud Generative AI Leader",
-        provider: "Coursera",
-        status: "Completed",
-        type: "Professional",
-        color: "from-yellow-500 to-yellow-600",
-        icon: FiAward,
-        certificate: "/certificates/Coursera-Google-Cloud-Certificate.pdf"
+      title: "Microsoft Azure AI Engineer Associate",
+      provider: "Microsoft",
+      status: "Completed",
+      type: "Artificial Intelligence",
+      color: "from-sky-600 to-sky-700",
+      icon: FiAward,
+      certificate: "/certificates/microsoft-azure-ai-engineer.pdf"
     },
     {
-        title: "Nvidia Natural Language Processing Essentials",
-        provider: "Coursera",
-        status: "Completed",
-        type: "Technical",
-        color: "from-teal-500 to-teal-600",
-        icon: FiAward,
-        certificate: "/certificates/Coursera-NLP-Certificate.pdf"
+      title: "Microsoft Semantic Kernel",
+      provider: "Microsoft",
+      status: "Completed",
+      type: "Artificial Intelligence",
+      color: "from-blue-600 to-blue-700",
+      icon: FiAward,
+      certificate: "/certificates/microsoft-azure-openai-semantic-kernel.pdf"
     },
-    { // --- NEW ---
-      title: "Introduction to Networking",
-      provider: "NVIDIA (Coursera)",
+    {
+      title: "GitHub Copilot",
+      provider: "Microsoft",
+      status: "Completed",
+      type: "Artificial Intelligence",
+      color: "from-gray-500 to-gray-600",
+      icon: FiAward,
+      certificate: "/certificates/microsoft-github-copilot.pdf"
+    },
+    {
+      title: "Google Cloud Generative AI Leader",
+      provider: "Google",
+      status: "Completed",
+      type: "Artificial Intelligence",
+      color: "from-yellow-500 to-yellow-600",
+      icon: FiAward,
+      certificate: "/certificates/Coursera-Google-Cloud-Certificate.pdf"
+    },
+    {
+      title: "NVIDIA Networking",
+      provider: "NVIDIA",
       status: "Completed",
       type: "Technical",
       color: "from-green-600 to-green-700",
       icon: FiAward,
       certificate: "/certificates/nvidia-networking-coursera.pdf"
     },
-    { // --- NEW ---
-      title: "GenSpark GitHub Copilot Learning Path",
-      provider: "Microsoft",
-      status: "Completed",
-      type: "Technical",
-      color: "from-gray-500 to-gray-600",
-      icon: FiAward,
-      certificate: "/certificates/microsoft-github-copilot.pdf"
-    },
-    { // --- NEW ---
-      title: "GenSpark Azure OpenAI and Semantic Kernel",
-      provider: "Microsoft",
-      status: "Completed",
-      type: "Technical",
-      color: "from-blue-600 to-blue-700",
-      icon: FiAward,
-      certificate: "/certificates/microsoft-azure-openai-semantic-kernel.pdf"
-    },
-    { // --- NEW ---
-      title: "GenSpark Azure AI Engineer Certification Path",
-      provider: "Microsoft",
-      status: "Completed",
-      type: "Technical",
-      color: "from-sky-600 to-sky-700",
-      icon: FiAward,
-      certificate: "/certificates/microsoft-azure-ai-engineer.pdf"
-    },
     {
-      title: "C Programming",
-      provider: "Udemy",
+      title: "NVIDIA NLP Fundamentals",
+      provider: "NVIDIA",
       status: "Completed",
       type: "Technical",
-      color: "from-purple-500 to-purple-600",
+      color: "from-teal-500 to-teal-600",
       icon: FiAward,
-      certificate: "/certificates/c-programming-udemy.pdf"
-    },
-    {
-      title: "PHP & MySQL",
-      provider: "Udemy",
-      status: "Completed",
-      type: "Technical",
-      color: "from-orange-500 to-orange-600",
-      icon: FiAward,
-      certificate: "/certificates/php-mysql-udemy.pdf"
-    },
-    {
-      title: "Modern Programming",
-      provider: "Udemy",
-      status: "Completed",
-      type: "Technical",
-      color: "from-red-500 to-red-600",
-      icon: FiAward,
-      certificate: "/certificates/modern-programming-udemy.pdf"
-    },
-    {
-      title: "Mastering C & C++",
-      provider: "Udemy",
-      status: "Completed",
-      type: "Technical",
-      color: "from-indigo-500 to-indigo-600",
-      icon: FiAward,
-      certificate: "/certificates/mastering-c-cpp-udemy.pdf"
+      certificate: "/certificates/Coursera-NLP-Certificate.pdf"
     }
   ];
 

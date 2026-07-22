@@ -4,42 +4,54 @@ import { FiArrowUpRight, FiBriefcase, FiCalendar, FiMapPin } from 'react-icons/f
 
 const experiences = [
   {
+    title: 'Founder',
+    company: 'Nakshatraa.online',
+    location: 'Remote',
+    period: 'Jul 2026 - Present',
+    summary:
+      'Founded and launched an AI-powered consultation platform for astrology, relationship, and life guidance, running it from concept to a live consumer product.',
+    responsibilities: [
+      'Founded and launched an AI-powered consultation platform offering astrology, relationship, and life-guidance services, taking it from concept to a live, customer-facing product.',
+      'Ran customer discovery interviews to validate demand and shape the service offering and pricing.',
+      'Designed the full customer journey, including onboarding, booking, consultation flow, payments, and retention.',
+      'Own the product roadmap end to end: prioritize features based on customer feedback, and drive SEO and organic growth strategy.',
+    ],
+  },
+  {
     title: 'LLM Post-Training Intern',
     company: 'Ethara AI',
     location: 'Remote',
-    period: 'Jan 2026 - Present',
+    period: 'Jan 2026 - Jun 2026',
     summary:
-      'Contributing to post-training optimization work for Large Language Models with a focus on reasoning quality, alignment, and response accuracy.',
+      'Contributed to post-training optimization work for Large Language Models with a focus on reasoning quality, alignment, and response accuracy.',
     responsibilities: [
-      'Evaluate model outputs for coherence, instruction-following, and factual reliability across diverse prompts.',
-      'Support supervised fine-tuning workflows, structured feedback generation, and dataset refinement.',
-      'Help improve LLM reasoning quality and alignment through careful prompt review and response analysis.',
+      'Evaluated large language model outputs for reasoning quality, factual accuracy, and instruction following.',
+      'Supported supervised fine-tuning (SFT) workflows and dataset refinement to improve post-training performance.',
+      'Worked on improving model alignment and response consistency across a wide range of prompts.',
     ],
   },
   {
-    title: 'Product Manager - Research & EdTech',
-    company: 'Institute for Global Research on Public Policy and the SDGs',
+    title: 'Product Research Intern',
+    company: 'Institute for Global Research on Public Policy & the SDGs',
     location: 'Remote',
-    period: 'Jan 2026 - Present',
+    period: 'Jan 2026 - Jun 2026',
     summary:
-      'Led market and user research on AI adoption and EdTech trends to inform product discovery and roadmap decisions.',
+      'Conducted market research and product discovery for AI and EdTech initiatives to feed directly into roadmap planning.',
     responsibilities: [
-      'Translated research insights into structured product recommendations aligned with academic and policy objectives.',
-      'Collaborated cross-functionally with research, academic, and operational stakeholders.',
-      'Connected research outcomes to product direction for education-focused initiatives.',
+      'Conducted market research and product discovery for AI and EdTech initiatives.',
+      'Identified customer pain points through qualitative research and secondary analysis.',
+      'Turned research findings into product recommendations that fed directly into roadmap planning.',
     ],
   },
   {
-    title: 'Computer Faculty',
+    title: 'Computer Science Faculty',
     company: 'Sant Sai Shikshan Sansthan',
     location: 'Varanasi',
     period: 'Jul 2025',
     summary:
-      'Delivered applied computer science instruction and tailored curriculum based on student learning gaps.',
+      'Delivered practical, application-based Computer Science instruction and improved student engagement through structured lesson planning.',
     responsibilities: [
-      'Built lesson delivery around practical understanding rather than rote theory.',
-      'Adapted teaching style to learner needs and helped students gain confidence in core computing concepts.',
-      'Strengthened communication and curriculum design through classroom instruction.',
+      'Delivered practical, application-based Computer Science instruction and improved student engagement through structured lesson planning.',
     ],
   },
 ];

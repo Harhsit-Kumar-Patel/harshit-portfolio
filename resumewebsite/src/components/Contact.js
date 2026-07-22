@@ -12,8 +12,8 @@ const Contact = () => {
     {
       icon: FiMail,
       label: "Email",
-      value: "harshit.mzp888@gmail.com",
-      link: "mailto:harshit.mzp888@gmail.com"
+      value: "work.harshitpatel@gmail.com",
+      link: "mailto:work.harshitpatel@gmail.com"
     },
     {
       icon: FiPhone,

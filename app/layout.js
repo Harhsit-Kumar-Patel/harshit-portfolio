@@ -1,9 +1,9 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Harshit | Aspiring Product Manager",
+  title: "Harshit Kumar Patel | Associate Product Manager",
   description:
-    "A polished one-page product portfolio for Harshit, showcasing case studies, product thinking, experience, and recruiter-friendly PM storytelling."
+    "A polished one-page product portfolio for Harshit Kumar Patel, showcasing case studies, product thinking, experience, and recruiter-friendly PM storytelling."
 };
 
 export default function RootLayout({ children }) {

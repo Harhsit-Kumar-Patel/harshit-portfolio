@@ -3,15 +3,15 @@ import { motion } from 'framer-motion';
 import { FiArrowRight, FiEye, FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const highlights = [
-  { label: 'Focus', value: 'Product discovery, AI evaluation, and execution-driven problem solving' },
-  { label: 'Current lane', value: 'LLM post-training work paired with EdTech and research-led product work' },
-  { label: 'Strength', value: 'Turning research, feedback, and ambiguity into structured product direction' },
+  { label: 'Focus', value: 'Product discovery, AI product development, and founder-led execution' },
+  { label: 'Current lane', value: 'Founding and operating Nakshatraa.online, built on AI-driven consultation' },
+  { label: 'Strength', value: 'Turning customer discovery, feedback, and research into live product roadmaps' },
 ];
 
 const metrics = [
-  { value: '3', label: 'Projects & case studies' },
+  { value: '4', label: 'Projects & case studies' },
   { value: '8', label: 'Core certifications' },
-  { value: '8.67', label: 'Current CGPA' },
+  { value: '8.55', label: 'Current CGPA' },
 ];
 
 const Hero = () => {
@@ -26,7 +26,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="section-kicker">Computer Science Undergrad | Product & AI</span>
+          <span className="section-kicker">Associate Product Manager | AI Product Management | Product Strategy</span>
           <h1 className="max-w-4xl text-5xl font-bold leading-[0.95] tracking-[-0.05em] text-stone-950 md:text-7xl">
             Building at the intersection of product thinking, AI systems, and practical execution.
           </h1>

@@ -92,7 +92,7 @@ const Hero = () => {
               Harshit Kumar Patel
             </h1>
             <h2 className="text-2xl md:text-3xl font-medium gradient-text">
-              Aspiring Product Manager
+              Associate Product Manager | AI Product Management | Product Strategy
             </h2>
             <div className="flex items-center justify-center space-x-2 text-slate-400 dark:text-slate-300">
               <FiMapPin className="w-5 h-5" />
@@ -106,11 +106,11 @@ const Hero = () => {
             className="flex flex-wrap justify-center gap-6 text-sm"
           >
             <a
-              href="mailto:harshit.mzp888@gmail.com"
+              href="mailto:work.harshitpatel@gmail.com"
               className="flex items-center space-x-2 glass dark:glass-dark px-4 py-2 rounded-full hover:scale-105 transition-transform duration-200"
             >
               <FiMail className="w-4 h-4" />
-              <span>harshit.mzp888@gmail.com</span>
+              <span>work.harshitpatel@gmail.com</span>
             </a>
             <a
               href="tel:+916386226495"

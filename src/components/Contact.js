@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi';
 
 const contacts = [
-  { label: 'Email', value: 'harshit.mzp888@gmail.com', href: 'mailto:harshit.mzp888@gmail.com' },
+  { label: 'Email', value: 'work.harshitpatel@gmail.com', href: 'mailto:work.harshitpatel@gmail.com' },
   { label: 'Phone', value: '+91 6386226495', href: 'tel:+916386226495' },
 ];
 

@@ -8,7 +8,7 @@ const education = [
     institution: 'SRM Institute of Science and Technology',
     location: 'Chennai, India',
     period: '2023 - 2027',
-    grade: '8.67 CGPA',
+    grade: '8.55 CGPA',
     status: 'Pursuing',
     icon: FiBookOpen,
   },

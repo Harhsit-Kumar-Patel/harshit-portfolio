@@ -4,21 +4,21 @@ import { FiArrowUpRight, FiBookOpen } from 'react-icons/fi';
 
 const caseStudies = [
   {
-    title: 'PathByte - Career Growth Platform',
-    summary: 'Built and deployed a career guidance platform with structured learning paths, onboarding flows, and progress tracking.',
+    title: 'PathByte | AI Career Growth Platform',
+    summary: 'A roadmap-first career guidance platform that helps students follow structured learning paths, built using customer discovery.',
     href: 'https://pathbyte-casestudy.netlify.app/',
     extra: '/PathByte-CaseStudyReport.pdf',
     tags: ['Founder-led build', 'Career growth', 'User journey'],
   },
   {
-    title: 'Inventura Case Study',
-    summary: 'Conceptualized an AI-assisted inventory tool for SMBs using offline-first architecture and WhatsApp-based workflows.',
+    title: 'Inventura | AI Inventory Assistant',
+    summary: 'An AI-powered inventory assistant for small and medium businesses, including AI-based demand forecasting and offline-first workflows.',
     href: 'https://inventura-casestudy.netlify.app/',
-    tags: ['SMB tooling', 'Offline-first', 'WhatsApp workflows'],
+    tags: ['SMB tooling', 'Offline-first', 'AI forecasting'],
   },
   {
-    title: 'ConvoHub Case Study',
-    summary: 'Designed a student-first communication system separating high-priority academic notices from peer discussions.',
+    title: 'ConvoHub | Academic Communication Platform',
+    summary: 'Designed a communication platform separating institutional announcements from peer discussions to reduce signal loss, based on user interviews.',
     href: 'https://convohub-casestudy.netlify.app/',
     tags: ['Academic communication', 'Student systems', 'Information clarity'],
   },

@@ -20,7 +20,7 @@ export default function ContactSection() {
 
     const subject = `Portfolio inquiry from ${formData.name || "a visitor"}`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`;
-    window.location.href = `mailto:harshit.mzp888@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:work.harshitpatel@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
   };
 
@@ -115,7 +115,7 @@ export default function ContactSection() {
 
                 {submitted ? (
                   <p className="rounded-2xl border border-accent/15 bg-accent-soft px-4 py-3 text-sm text-accent-deep">
-                    Your email app should open with the message prefilled. If it doesn&apos;t, you can also write directly to harshit.mzp888@gmail.com.
+                    Your email app should open with the message prefilled. If it doesn&apos;t, you can also write directly to work.harshitpatel@gmail.com.
                   </p>
                 ) : null}
               </form>

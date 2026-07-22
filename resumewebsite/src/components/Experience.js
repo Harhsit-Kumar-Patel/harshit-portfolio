@@ -9,28 +9,47 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const experiences = [
-    { // --- NEW EXPERIENCE ---
-      title: "Product Manager - Ed Tech",
-      company: "International Institute Of SDGs & Public Policy Research",
-      location: "Remote", // Added "Remote" as a placeholder
-      period: "Sep 2025 – Present",
+    {
+      title: "Founder",
+      company: "Nakshatraa.online",
+      location: "Remote",
+      period: "Jul 2026 – Present",
       responsibilities: [
-        "Collaborated with cross-functional teams to define product requirements and roadmap for EdTech solutions aligned with UN SDGs.",
-        "Conducted market research and competitor analysis to identify emerging trends and innovation opportunities in education technology.",
-        "Assisted in developing, testing, and improving product features to enhance user engagement and learning experience."
+        "Founded and launched an AI-powered consultation platform offering astrology, relationship, and life-guidance services, taking it from concept to a live, customer-facing product.",
+        "Ran customer discovery interviews to validate demand and shape the service offering and pricing.",
+        "Designed the full customer journey, including onboarding, booking, consultation flow, payments, and retention.",
+        "Own the product roadmap end to end: prioritize features based on customer feedback, and drive SEO and organic growth strategy."
       ]
     },
-    { // --- EXISTING EXPERIENCE ---
-      title: "Computer Faculty",
+    {
+      title: "LLM Post-Training Intern",
+      company: "Ethara AI",
+      location: "Remote",
+      period: "Jan 2026 – Jun 2026",
+      responsibilities: [
+        "Evaluated large language model outputs for reasoning quality, factual accuracy, and instruction following.",
+        "Supported supervised fine-tuning (SFT) workflows and dataset refinement to improve post-training performance.",
+        "Worked on improving model alignment and response consistency across a wide range of prompts."
+      ]
+    },
+    {
+      title: "Product Research Intern",
+      company: "Institute for Global Research on Public Policy & the SDGs",
+      location: "Remote",
+      period: "Jan 2026 – Jun 2026",
+      responsibilities: [
+        "Conducted market research and product discovery for AI and EdTech initiatives.",
+        "Identified customer pain points through qualitative research and secondary analysis.",
+        "Turned research findings into product recommendations that fed directly into roadmap planning."
+      ]
+    },
+    {
+      title: "Computer Science Faculty",
       company: "Sant Sai Shikshan Sansthan",
       location: "Varanasi",
       period: "Jul 2025",
       responsibilities: [
-        "Developed comprehensive lesson plans for computer science curriculum",
-        "Provided one-on-one support to students for better understanding",
-        "Created engaging activities to enhance learning experience",
-        "Organized and maintained classroom resources and materials",
-        "Conducted regular student assessments and progress tracking"
+        "Delivered practical, application-based Computer Science instruction and improved student engagement through structured lesson planning."
       ]
     }
   ];
