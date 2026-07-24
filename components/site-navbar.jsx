@@ -50,7 +50,7 @@ export default function SiteNavbar() {
             </span>
             <div>
               <p className="text-sm font-semibold tracking-[-0.02em] text-slate-950">Harshit</p>
-              <p className="text-xs text-slate-500">Aspiring Product Manager</p>
+              <p className="text-xs text-slate-500">Associate Product Manager</p>
             </div>
           </a>
 

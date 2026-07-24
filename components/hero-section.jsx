@@ -44,7 +44,7 @@ export default function HeroSection() {
               <span className="eyebrow">Product Portfolio</span>
               <h1 className="mt-6 text-4xl font-semibold tracking-[-0.06em] text-slate-950 sm:text-5xl lg:text-7xl">
                 Harshit Kumar Patel
-                <span className="mt-3 block text-base sm:text-lg lg:text-xl font-medium text-slate-500">Associate Product Manager | AI Product Management | Product Strategy</span>
+                <span className="mt-3 block text-base sm:text-lg lg:text-xl font-medium tracking-normal leading-normal text-slate-500">Associate Product Manager | AI Product Management | Product Strategy</span>
               </h1>
 
               <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700 sm:text-xl">

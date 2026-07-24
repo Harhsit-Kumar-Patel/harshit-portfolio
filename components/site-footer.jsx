@@ -6,7 +6,7 @@ export default function SiteFooter() {
       <div className="page-shell flex flex-col gap-5 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
         <div>
           <p className="font-semibold text-slate-900">Harshit</p>
-          <p>Aspiring Product Manager</p>
+          <p>Associate Product Manager</p>
         </div>
 
         <div className="flex flex-wrap gap-4">
