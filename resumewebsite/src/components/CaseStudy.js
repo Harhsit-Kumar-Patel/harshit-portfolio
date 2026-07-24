@@ -44,7 +44,7 @@ const CaseStudy = () => {
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-4">
-                             <a href="https://pathbyte-casestudy.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gradient-to-r from-primary-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-full font-semibold transition-opacity">
+                             <a href="https://path-byte-case-study.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gradient-to-r from-primary-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-full font-semibold transition-opacity">
                                 <FiEye />
                                 <span>View Case Study</span>
                             </a>
@@ -72,7 +72,7 @@ const CaseStudy = () => {
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-4">
-                            <a href="https://inventura-casestudy.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gradient-to-r from-primary-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-full font-semibold transition-opacity">
+                             <a href="https://inventura-case-study.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gradient-to-r from-primary-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-full font-semibold transition-opacity">
                                 <FiEye />
                                 <span>View Case Study</span>
                             </a>
@@ -96,7 +96,7 @@ const CaseStudy = () => {
                             </p>
                         </div>
                         <div className="flex flex-wrap gap-4">
-                            <a href="https://convohub-casestudy.netlify.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gradient-to-r from-primary-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-full font-semibold transition-opacity">
+                             <a href="https://convo-hub-case-study.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-2 text-white bg-gradient-to-r from-primary-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-full font-semibold transition-opacity">
                                 <FiEye />
                                 <span>View Case Study</span>
                             </a>

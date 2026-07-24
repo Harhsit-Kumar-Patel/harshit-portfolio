@@ -6,6 +6,7 @@ const experiences = [
   {
     title: 'Founder',
     company: 'Nakshatraa.online',
+    url: 'https://www.nakshatraa.online/',
     location: 'Remote',
     period: 'Jul 2026 - Present',
     summary:
@@ -92,7 +93,18 @@ const Experience = () => {
                 <FiBriefcase className="h-7 w-7 text-[var(--accent-soft)]" />
                 <p className="mt-8 text-xs uppercase tracking-[0.22em] text-stone-400">Role</p>
                 <h3 className="mt-2 text-2xl font-bold text-stone-50">{exp.title}</h3>
-                <p className="mt-3 text-sm text-stone-300">{exp.company}</p>
+                {exp.url ? (
+                  <a
+                    href={exp.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 block text-sm font-semibold text-[var(--accent-soft)] hover:underline"
+                  >
+                    {exp.company}
+                  </a>
+                ) : (
+                  <p className="mt-3 text-sm text-stone-300">{exp.company}</p>
+                )}
               </div>
 
               <div>

@@ -84,6 +84,28 @@ function CaseStudyDialog({ study, onClose }) {
             <h3 id={`${study.id}-title`} className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
               {study.title}
             </h3>
+            <div className="mt-2 flex gap-4 text-xs font-semibold">
+              {study.demoUrl && (
+                <a
+                  href={study.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-deep hover:underline inline-flex items-center gap-0.5"
+                >
+                  View Product Demo <FiArrowUpRight className="h-3 w-3" />
+                </a>
+              )}
+              {study.caseStudyUrl && (
+                <a
+                  href={study.caseStudyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent hover:text-accent-deep hover:underline inline-flex items-center gap-0.5"
+                >
+                  View Case Study Site <FiArrowUpRight className="h-3 w-3" />
+                </a>
+              )}
+            </div>
           </div>
           <button
             type="button"
@@ -192,14 +214,38 @@ export default function CaseStudiesSection() {
                   ))}
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => setActiveStudy(study)}
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-deep"
-                >
-                  Read Case Study
-                  <FiArrowUpRight className="h-4 w-4" />
-                </button>
+                <div className="mt-8 flex flex-wrap gap-4 items-center">
+                  <button
+                    type="button"
+                    onClick={() => setActiveStudy(study)}
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-deep"
+                  >
+                    Read Details
+                    <FiArrowUpRight className="h-4 w-4" />
+                  </button>
+                  {study.demoUrl && (
+                    <a
+                      href={study.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 hover:text-slate-950"
+                    >
+                      Live Demo
+                      <FiArrowUpRight className="h-4 w-4" />
+                    </a>
+                  )}
+                  {study.caseStudyUrl && (
+                    <a
+                      href={study.caseStudyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-600 hover:text-slate-900"
+                    >
+                      View Live
+                      <FiArrowUpRight className="h-4 w-4" />
+                    </a>
+                  )}
+                </div>
               </article>
             </Reveal>
           ))}

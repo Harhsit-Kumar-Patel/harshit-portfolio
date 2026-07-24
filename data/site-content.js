@@ -10,12 +10,13 @@ export const navigationLinks = [
 export const caseStudies = [
   {
     id: "ai-copilot",
-    title: "AI Product Execution Copilot",
+    title: "Launchpad AI | AI Product Execution Copilot",
     problemStatement: "Product managers spend hours manually converting meeting transcripts into structured PRDs, user stories, and execution plans.",
     summary:
       "I designed an AI workflow that converts meeting transcripts into PRDs, user stories, Jira tickets, and execution plans, significantly reducing documentation overhead.",
     tags: ["AI SaaS", "Productivity", "Prompt Engineering", "Workflow Design"],
     impact: "Automated PRD & Jira ticket generation",
+    demoUrl: "https://launch-pad-ai-phi.vercel.app/",
     metrics: [
       { label: "Documentation", value: "-80%", note: "Reduction in manual writing time" },
       { label: "Key focus", value: "PM SaaS", note: "Aims to remove execution bottlenecks" },
@@ -29,6 +30,7 @@ export const caseStudies = [
       "Product Managers, Product Owners, and Scrum Masters who manage product backlogs and documentation pipelines.",
     keyInsight:
       "Standard meeting structures map directly to PM documentation sections if parsed using specific multi-shot prompt templates that extract action items, requirements, and constraints.",
+    defaultUrl: "https://launch-pad-ai-phi.vercel.app/",
     goalSuccessMetric:
       "Design a reliable workflow that generates high-fidelity draft PRDs and Jira tickets from typical transcript inputs with minimal PM correction needed.",
     approach: [
@@ -70,6 +72,8 @@ export const caseStudies = [
       "Built and launched a roadmap-first career guidance platform that helps students follow structured learning paths, using customer discovery to shape the onboarding and learning journeys.",
     tags: ["Product Discovery", "Onboarding", "Career Growth", "Live Product"],
     impact: "Live platform with personalized learning paths",
+    demoUrl: "https://path-byte.vercel.app/",
+    caseStudyUrl: "https://path-byte-case-study.vercel.app/",
     metrics: [
       { label: "Platform Status", value: "Live", note: "Deployed and active career platform" },
       { label: "Primary Lever", value: "Guided path", note: "Roadmap-first learning journey" },
@@ -124,6 +128,7 @@ export const caseStudies = [
       "Designed a platform separating institutional announcements from peer discussions, based on user interviews and structured user flows.",
     tags: ["UX", "Information Architecture", "Case Study", "Student Systems"],
     impact: "Announcements separated from chat noise",
+    caseStudyUrl: "https://convo-hub-case-study.vercel.app/",
     metrics: [
       { label: "Core issue", value: "Signal loss", note: "Urgent notices drowned in chat noise" },
       { label: "Primary fix", value: "Channel split", note: "Separated announcement types" },
@@ -177,6 +182,7 @@ export const caseStudies = [
       "Designed a case study for an AI-powered inventory assistant with demand forecasting and offline-first workflows.",
     tags: ["Case Study", "SMB Tools", "AI", "Offline-first"],
     impact: "AI demand forecasting for small retailers",
+    caseStudyUrl: "https://inventura-case-study.vercel.app/",
     metrics: [
       { label: "AI Feature", value: "Forecasting", note: "Predictive inventory ordering" },
       { label: "Workflow", value: "Offline-first", note: "Tailored to low connectivity" },
@@ -258,6 +264,7 @@ export const experiences = [
   {
     role: "Founder",
     company: "Nakshatraa.online",
+    url: "https://www.nakshatraa.online/",
     period: "Jul 2026 - Present",
     bullets: [
       "Founded and launched an AI-powered consultation platform offering astrology, relationship, and life-guidance services, taking it from concept to a live, customer-facing product.",

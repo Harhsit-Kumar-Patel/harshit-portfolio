@@ -6,20 +6,20 @@ const caseStudies = [
   {
     title: 'PathByte | AI Career Growth Platform',
     summary: 'A roadmap-first career guidance platform that helps students follow structured learning paths, built using customer discovery.',
-    href: 'https://pathbyte-casestudy.netlify.app/',
+    href: 'https://path-byte-case-study.vercel.app/',
     extra: '/PathByte-CaseStudyReport.pdf',
     tags: ['Founder-led build', 'Career growth', 'User journey'],
   },
   {
     title: 'Inventura | AI Inventory Assistant',
     summary: 'An AI-powered inventory assistant for small and medium businesses, including AI-based demand forecasting and offline-first workflows.',
-    href: 'https://inventura-casestudy.netlify.app/',
+    href: 'https://inventura-case-study.vercel.app/',
     tags: ['SMB tooling', 'Offline-first', 'AI forecasting'],
   },
   {
     title: 'ConvoHub | Academic Communication Platform',
     summary: 'Designed a communication platform separating institutional announcements from peer discussions to reduce signal loss, based on user interviews.',
-    href: 'https://convohub-casestudy.netlify.app/',
+    href: 'https://convo-hub-case-study.vercel.app/',
     tags: ['Academic communication', 'Student systems', 'Information clarity'],
   },
 ];

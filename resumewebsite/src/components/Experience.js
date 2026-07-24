@@ -12,6 +12,7 @@ const Experience = () => {
     {
       title: "Founder",
       company: "Nakshatraa.online",
+      url: "https://www.nakshatraa.online/",
       location: "Remote",
       period: "Jul 2026 – Present",
       responsibilities: [
@@ -99,7 +100,18 @@ const Experience = () => {
                   <div className="flex items-center space-x-4 text-gray-600 dark:text-gray-300">
                     <div className="flex items-center space-x-1">
                       <FiUsers className="w-4 h-4" />
-                      <span className="font-semibold">{exp.company}</span>
+                      {exp.url ? (
+                        <a
+                          href={exp.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold text-primary-500 hover:text-primary-600 hover:underline"
+                        >
+                          {exp.company}
+                        </a>
+                      ) : (
+                        <span className="font-semibold">{exp.company}</span>
+                      )}
                     </div>
                     <div className="flex items-center space-x-1">
                       <FiMapPin className="w-4 h-4" />

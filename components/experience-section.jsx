@@ -27,7 +27,18 @@ export default function ExperienceSection() {
 
                 <div>
                   <h3 className="text-2xl font-semibold tracking-[-0.04em] text-slate-950">{experience.role}</h3>
-                  <p className="mt-2 text-base font-medium text-slate-600">{experience.company}</p>
+                  {experience.url ? (
+                    <a
+                      href={experience.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-2 inline-block text-base font-medium text-accent hover:text-accent-deep hover:underline"
+                    >
+                      {experience.company}
+                    </a>
+                  ) : (
+                    <p className="mt-2 text-base font-medium text-slate-600">{experience.company}</p>
+                  )}
 
                   <ul className="mt-6 grid gap-3">
                     {experience.bullets.map((bullet) => (

@@ -10,7 +10,7 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "AI Product Execution Copilot",
+      title: "Launchpad AI | AI Product Execution Copilot",
       description: "An AI SaaS workflow that converts meeting transcripts into PRDs, user stories, Jira tickets, and execution plans to streamline documentation.",
       period: "Jan 2026",
       technologies: ["LLMs", "Prompt Engineering", "Workflow Design", "AI Integration", "Product Analytics"],
@@ -21,7 +21,7 @@ const Projects = () => {
         "Conducted user research with product managers to validate the automated output formats"
       ],
       github: "https://github.com/Harhsit-Kumar-Patel",
-      demo: "https://github.com/Harhsit-Kumar-Patel"
+      demo: "https://launch-pad-ai-phi.vercel.app/"
     },
     {
       title: "PathByte",
@@ -35,7 +35,7 @@ const Projects = () => {
         "Successfully scoped the MVP, verified monetization opportunities, and launched live"
       ],
       github: "https://github.com/Harhsit-Kumar-Patel/PathByte",
-      demo: "https://pathbyte.netlify.app/"
+      demo: "https://path-byte.vercel.app/"
     }
   ];
 

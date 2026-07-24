@@ -4,12 +4,12 @@ import { FiExternalLink, FiGithub } from 'react-icons/fi';
 
 const projects = [
   {
-    title: 'AI Product Execution Copilot',
+    title: 'Launchpad AI | AI Product Execution Copilot',
     description:
       'An AI SaaS workflow that converts meeting transcripts into PRDs, user stories, Jira tickets, and execution plans to streamline documentation.',
     technologies: ['LLM workflow', 'Prompt engineering', 'Jira API integration', 'Product discovery', 'User stories'],
     github: 'https://github.com/Harhsit-Kumar-Patel',
-    demo: 'https://github.com/Harhsit-Kumar-Patel',
+    demo: 'https://launch-pad-ai-phi.vercel.app/',
     challenge: 'Product managers spend hours manually converting discussion notes into structured requirements and tickets.',
     response: 'Automates document translation, reducing manual writing time by 80% and speeding up developer handoffs.',
   },
@@ -19,7 +19,7 @@ const projects = [
       'Built and deployed a career guidance platform with structured learning paths, onboarding flows, and progress tracking.',
     technologies: ['Product vision', 'User journey design', 'Execution roadmap', 'Onboarding flows', 'Progress tracking'],
     github: 'https://github.com/Harhsit-Kumar-Patel/PathByte',
-    demo: 'https://pathbyte.netlify.app/',
+    demo: 'https://path-byte.vercel.app/',
     challenge: 'Career growth support is often scattered, generic, and hard to translate into a clear learning path.',
     response: 'PathByte turns career planning into a guided system with structured progression, clearer onboarding, and trackable momentum.',
   },
