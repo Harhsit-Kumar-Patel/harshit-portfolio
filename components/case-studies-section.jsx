@@ -26,7 +26,7 @@ function renderValue(value) {
     return (
       <ul className="space-y-3">
         {value.map((item) => (
-          <li key={item} className="flex gap-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
+          <li key={item} className="flex gap-3 text-sm leading-7 text-slate-700">
             <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent" />
             <span>{item}</span>
           </li>
@@ -35,7 +35,7 @@ function renderValue(value) {
     );
   }
 
-  return <p className="text-sm leading-7 text-slate-700 dark:text-slate-300">{value}</p>;
+  return <p className="text-sm leading-7 text-slate-700">{value}</p>;
 }
 
 function CaseStudyDialog({ study, onClose }) {
@@ -69,21 +69,21 @@ function CaseStudyDialog({ study, onClose }) {
   }
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-start justify-center overflow-y-auto bg-slate-950/45 p-4 sm:p-6">
+    <div className="fixed inset-0 z-[80] flex items-start justify-center overflow-y-auto bg-slate-950/40 p-4 sm:p-6 backdrop-blur-sm">
       <div className="absolute inset-0" onClick={onClose} aria-hidden="true" />
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby={`${study.id}-title`}
-        className="surface-card-strong relative z-10 mt-10 w-full max-w-6xl overflow-hidden"
+        className="surface-card-strong relative z-10 mt-10 w-full max-w-6xl overflow-hidden bg-white border border-slate-200/80 shadow-lift rounded-[28px]"
       >
-        <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-5 py-4 sm:px-8">
+        <div className="flex items-center justify-between border-b border-slate-100 px-5 py-5 sm:px-8 bg-white">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">Product Spec</p>
-            <h3 id={`${study.id}-title`} className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-slate-950 dark:text-white">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-accent">Product Spec</p>
+            <h3 id={`${study.id}-title`} className="mt-2 text-2xl font-black tracking-[-0.04em] text-slate-950">
               {study.title}
             </h3>
-            <div className="mt-2 flex gap-4 text-xs font-semibold">
+            <div className="mt-2.5 flex gap-4 text-xs font-semibold">
               {study.demoUrl && (
                 <a
                   href={study.demoUrl}
@@ -109,21 +109,21 @@ function CaseStudyDialog({ study, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-slate-950 dark:hover:text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 text-slate-400 hover:bg-slate-50 hover:text-slate-800 transition-colors"
           >
             <FiX className="h-5 w-5" />
           </button>
         </div>
 
-        <div className="grid gap-0 lg:grid-cols-[220px_minmax(0,1fr)]">
-          <aside className="hidden border-r border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-900/40 p-6 lg:block">
-            <div className="sticky top-6 space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-400">PRD Jump to</p>
+        <div className="grid gap-0 lg:grid-cols-[230px_minmax(0,1fr)]">
+          <aside className="hidden border-r border-slate-100 bg-slate-50/50 p-6 lg:block">
+            <div className="sticky top-6 space-y-2">
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">PRD Sections</p>
               {modalSections.map((section) => (
                 <a
                   key={section.key}
                   href={`#${study.id}-${section.key}`}
-                  className="block rounded-xl px-3 py-2 text-sm text-slate-600 dark:text-slate-350 hover:bg-white dark:hover:bg-slate-800 hover:text-slate-950 dark:hover:text-white"
+                  className="block rounded-xl px-3 py-2 text-xs font-bold uppercase tracking-wider text-slate-650 hover:bg-accent-soft hover:text-accent transition-colors"
                 >
                   {section.label}
                 </a>
@@ -131,13 +131,13 @@ function CaseStudyDialog({ study, onClose }) {
             </div>
           </aside>
 
-          <div className="max-h-[80vh] overflow-y-auto p-5 sm:p-8">
-            <div className="grid gap-4 md:grid-cols-3">
+          <div className="max-h-[75vh] overflow-y-auto p-5 sm:p-8 bg-white">
+            <div className="grid gap-4 sm:grid-cols-3">
               {study.metrics.map((metric) => (
-                <div key={metric.label} className="rounded-[24px] border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{metric.label}</p>
-                  <p className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-slate-950 dark:text-white">{metric.value}</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">{metric.note}</p>
+                <div key={metric.label} className="rounded-2xl border border-slate-150 bg-slate-50/60 p-5">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">{metric.label}</p>
+                  <p className="mt-2 text-2xl font-black tracking-[-0.04em] text-slate-950">{metric.value}</p>
+                  <p className="mt-1 text-xs text-slate-500 leading-relaxed font-medium">{metric.note}</p>
                 </div>
               ))}
             </div>
@@ -150,28 +150,28 @@ function CaseStudyDialog({ study, onClose }) {
               ))}
             </div>
 
-            <p className="mt-4 text-base font-medium leading-relaxed text-slate-800 dark:text-slate-200">
+            <p className="mt-5 text-base font-semibold leading-relaxed text-slate-800">
               {study.problemStatement}
             </p>
 
-            <div className="mt-8 space-y-8">
+            <div className="mt-8 space-y-6">
               {modalSections.map((section) => (
                 <section
                   id={`${study.id}-${section.key}`}
                   key={section.key}
-                  className="rounded-[28px] border border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-900 p-6"
+                  className="rounded-[22px] border border-slate-150 bg-white p-6 shadow-[0_2px_8px_rgba(15,23,42,0.02)]"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-accent-soft text-accent">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-accent-soft text-accent">
                       {section.key.toLowerCase().includes("impact") ? (
-                        <FiBarChart2 className="h-4 w-4" />
+                        <FiBarChart2 className="h-4.5 w-4.5" />
                       ) : (
-                        <FiTarget className="h-4 w-4" />
+                        <FiTarget className="h-4.5 w-4.5" />
                       )}
                     </span>
-                    <h4 className="text-lg font-semibold tracking-[-0.03em] text-slate-950 dark:text-white">{section.label}</h4>
+                    <h4 className="text-base font-black tracking-tight text-slate-950">{section.label}</h4>
                   </div>
-                  <div className="mt-4">{renderValue(section.content)}</div>
+                  <div className="mt-4 border-t border-slate-50 pt-4">{renderValue(section.content)}</div>
                 </section>
               ))}
             </div>
