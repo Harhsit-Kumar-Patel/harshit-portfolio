@@ -262,6 +262,18 @@ export const processFlow = [
 
 export const experiences = [
   {
+    role: "Product Management Intern",
+    company: "Dutient.ai",
+    period: "Aug 2026 - Present",
+    bullets: [
+      "Supporting product discovery, requirements definition, and execution across cross-functional teams.",
+      "Contributing to PRDs, user stories, acceptance criteria, and feature briefs for product initiatives.",
+      "Supporting user research, usability testing, competitive analysis, and identification of product opportunities.",
+      "Assisting with backlog prioritization, sprint planning, and roadmap tracking to support product delivery.",
+      "Working across product strategy, GTM planning, customer discovery, product analytics, and feature adoption initiatives."
+    ]
+  },
+  {
     role: "Founder",
     company: "Nakshatraa.online",
     url: "https://www.nakshatraa.online/",
@@ -278,8 +290,8 @@ export const experiences = [
     company: "Ethara AI",
     period: "Jan 2026 - Jun 2026",
     bullets: [
-      "Evaluated large language model outputs for reasoning quality, factual reliability, and instruction-following across varied prompts.",
-      "Support supervised fine-tuning (SFT) workflows and dataset refinement to improve post-training performance.",
+      "Evaluated large language model outputs for reasoning quality, factual reliability, and instruction following.",
+      "Supported supervised fine-tuning (SFT) workflows and dataset refinement to improve post-training performance.",
       "Worked on improving model alignment and response consistency across a wide range of prompts."
     ]
   },

@@ -11,14 +11,14 @@ module.exports = {
         ink: "#0f172a",
         muted: "#475569",
         accent: {
-          DEFAULT: "#0f766e",
-          soft: "#d7f2ee",
-          deep: "#115e59"
+          DEFAULT: "#2563eb",
+          soft: "#eff6ff",
+          deep: "#1d4ed8"
         },
         canvas: {
-          DEFAULT: "#f8fbfb",
-          alt: "#f1f7f7",
-          warm: "#fcfdfd"
+          DEFAULT: "#ffffff",
+          alt: "#fafbfb",
+          warm: "#ffffff"
         }
       },
       boxShadow: {

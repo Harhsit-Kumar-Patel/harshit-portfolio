@@ -1,91 +1,64 @@
+"use client";
+
 import { FiArrowRight, FiDownload, FiMail } from "react-icons/fi";
 import { contactLinks } from "../data/site-content";
 import Reveal from "./ui/reveal";
 
-function HeroVisual() {
-  return (
-    <div className="relative">
-      <div className="absolute inset-0 -z-10 rounded-[36px] bg-gradient-to-br from-accent/15 via-sky-100 to-transparent blur-3xl" />
-      <div className="surface-card-strong relative overflow-hidden p-6 sm:p-8">
-        <div className="grid-lines absolute inset-0 opacity-35" />
-        <div className="relative space-y-6">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">PM Snapshot</p>
-            <h3 className="mt-3 text-2xl font-semibold tracking-[-0.04em] text-slate-950">
-              Structured thinking, simple communication, clear product judgment.
-            </h3>
-          </div>
-
-          <div className="grid gap-3">
-            {[
-              ["Focus", "User problems worth solving"],
-              ["Approach", "Research, prioritization, and clarity"],
-              ["Goal", "Thoughtful product work with measurable impact"]
-            ].map(([title, copy]) => (
-              <div key={title} className="rounded-[22px] border border-slate-200 bg-slate-50 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{title}</p>
-                <p className="mt-2 text-sm leading-7 text-slate-700">{copy}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function HeroSection() {
   return (
-    <section id="home" className="section-shell pt-32 sm:pt-36">
+    <section id="home" className="section-shell pt-32 sm:pt-40 pb-20">
       <div className="page-shell">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <Reveal>
-            <div className="max-w-2xl">
-              <span className="eyebrow">Product Portfolio</span>
-              <h1 className="mt-6 text-4xl font-semibold tracking-[-0.06em] text-slate-950 sm:text-5xl lg:text-7xl">
-                Harshit Kumar Patel
-                <span className="mt-3 block text-base sm:text-lg lg:text-xl font-medium tracking-normal leading-normal text-slate-500">Associate Product Manager | AI Product Management | Product Strategy</span>
-              </h1>
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-accent">
+              Associate Product Manager | AI Product Management | Product Strategy
+            </span>
+          </Reveal>
+          
+          <Reveal delay={100}>
+            <h1 className="mt-6 text-4xl sm:text-6xl md:text-7xl font-black tracking-[-0.05em] text-slate-950 leading-[1.1] max-w-3xl">
+              I build products people actually need.
+            </h1>
+          </Reveal>
 
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700 sm:text-xl">
-                Building user-first products with structured thinking, curiosity, and data-backed decisions.
-              </p>
+          <Reveal delay={200}>
+            <p className="mt-8 text-lg sm:text-xl md:text-2xl leading-relaxed text-slate-600 max-w-2xl">
+              Building user-first products with structured thinking, curiosity, and data-backed decisions. I enjoy solving ambiguous user problems, improving product experiences, and turning insights into clear action.
+            </p>
+          </Reveal>
 
-              <p className="mt-5 max-w-xl text-base leading-8 text-slate-600">
-                I enjoy solving ambiguous user problems, improving product experiences, and turning insights into clear action.
-              </p>
-
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="#case-studies" className="button-primary">
-                  View Case Studies
-                  <FiArrowRight className="h-4 w-4" />
-                </a>
-                <a href="/resume.pdf" download className="button-secondary">
-                  Download Resume
-                  <FiDownload className="h-4 w-4" />
-                </a>
-                <a href="#contact" className="button-secondary">
-                  Contact Me
-                  <FiMail className="h-4 w-4" />
-                </a>
-              </div>
-
-              <div className="mt-10 flex flex-wrap items-center gap-5 text-sm text-slate-500">
-                <span>Chennai, India</span>
-                <span className="hidden h-1 w-1 rounded-full bg-slate-300 sm:block" />
-                <a href={contactLinks[1].href} target="_blank" rel="noreferrer" className="hover:text-accent">
-                  LinkedIn
-                </a>
-                <span className="hidden h-1 w-1 rounded-full bg-slate-300 sm:block" />
-                <a href={contactLinks[2].href} target="_blank" rel="noreferrer" className="hover:text-accent">
-                  GitHub
-                </a>
-              </div>
+          <Reveal delay={300}>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <a 
+                href="#case-studies" 
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-8 py-4 text-base font-semibold text-white shadow-soft transition-transform hover:-translate-y-0.5 hover:bg-slate-800"
+              >
+                View Projects
+                <FiArrowRight className="h-5 w-5" />
+              </a>
+              <a 
+                href="/resume.pdf" 
+                download
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-200 bg-white px-8 py-4 text-base font-semibold text-slate-700 hover:-translate-y-0.5 hover:border-slate-400 hover:bg-slate-50 transition-all"
+              >
+                Download CV
+                <FiDownload className="h-5 w-5" />
+              </a>
             </div>
           </Reveal>
 
-          <Reveal delay={120} className="lg:max-w-md lg:justify-self-end">
-            <HeroVisual />
+          <Reveal delay={400}>
+            <div className="mt-16 flex flex-wrap items-center justify-center gap-5 text-sm font-medium text-slate-500">
+              <span>Chennai, India</span>
+              <span className="hidden h-1.5 w-1.5 rounded-full bg-slate-300 sm:block" />
+              <a href={contactLinks[1].href} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
+                LinkedIn
+              </a>
+              <span className="hidden h-1.5 w-1.5 rounded-full bg-slate-300 sm:block" />
+              <a href={contactLinks[2].href} target="_blank" rel="noreferrer" className="hover:text-accent transition-colors">
+                GitHub
+              </a>
+            </div>
           </Reveal>
         </div>
       </div>

@@ -1,47 +1,67 @@
-import { FiBarChart2, FiBriefcase, FiMessageCircle, FiTool } from "react-icons/fi";
-import { skills } from "../data/site-content";
-import Reveal from "./ui/reveal";
-import SectionHeader from "./ui/section-header";
+"use client";
 
-const icons = [FiBriefcase, FiBarChart2, FiTool, FiMessageCircle];
+import { FiAward, FiBriefcase, FiCpu, FiLayers } from "react-icons/fi";
+import Reveal from "./ui/reveal";
 
 export default function SkillsSection() {
+  const cards = [
+    {
+      title: "Product Thinking",
+      desc: "Applying user-first empathy, structured thinking, and product judgment to solve complex user problems.",
+      icon: FiBriefcase
+    },
+    {
+      title: "Continuous Learning",
+      desc: "Regularly acquiring new skills and certifications to stay aligned with modern product practices.",
+      icon: FiAward
+    },
+    {
+      title: "PM + Technology",
+      desc: "Leveraging understanding of tech stacks, AI workflows, and databases to collaborate effectively with engineers.",
+      icon: FiCpu
+    },
+    {
+      title: "Product Interactions",
+      desc: "Crafting conversion-focused user journeys, wireframes, and prototypes using industry tools.",
+      icon: FiLayers
+    }
+  ];
+
   return (
-    <section id="skills" className="section-shell">
+    <section id="skills" className="section-shell bg-slate-50/50 border-y border-slate-100">
       <div className="page-shell">
         <Reveal>
-          <SectionHeader
-            eyebrow="Skills & Toolkit"
-            title="A PM toolkit built around strategy, analysis, communication, and practical execution."
-            copy="I like skills that make product thinking more actionable: clearer problem framing, stronger prioritization, better measurement, and smoother collaboration."
-          />
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-accent">
+              Core Strengths
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-5xl font-black tracking-[-0.04em] text-slate-950">
+              What I Bring
+            </h2>
+            <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-600">
+              A focus on bridging the gap between business objectives, user needs, and engineering feasibility.
+            </p>
+          </div>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {skills.map((group, index) => {
-            const Icon = icons[index];
-
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {cards.map((card, idx) => {
+            const Icon = card.icon;
             return (
-              <Reveal key={group.title} delay={index * 80}>
-                <article className="surface-card h-full p-6 sm:p-7">
-                  <div className="flex items-center gap-4">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-soft text-accent">
-                      <Icon className="h-5 w-5" />
+              <Reveal key={card.title} delay={idx * 80}>
+                <div className="surface-card p-6 h-full flex flex-col justify-between hover:shadow-medium transition-all group">
+                  <div>
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-accent-soft text-accent group-hover:bg-accent group-hover:text-white transition-colors duration-300">
+                      <Icon className="h-6 w-6" />
                     </span>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-slate-400">Category</p>
-                      <h3 className="mt-1 text-2xl font-semibold tracking-[-0.04em] text-slate-950">{group.title}</h3>
-                    </div>
+                    <h3 className="mt-5 text-xl font-bold tracking-[-0.02em] text-slate-950">
+                      {card.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                      {card.desc}
+                    </p>
                   </div>
-
-                  <div className="mt-6 flex flex-wrap gap-3">
-                    {group.items.map((item) => (
-                      <span key={item} className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 hover:-translate-y-0.5 hover:bg-white">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </article>
+                </div>
               </Reveal>
             );
           })}

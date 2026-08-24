@@ -2,15 +2,21 @@
 
 import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { navigationLinks } from "../data/site-content";
+
+const customLinks = [
+  { id: "case-studies", label: "Work", href: "#case-studies" },
+  { id: "about", label: "About", href: "#about" },
+  { id: "resume", label: "Resume", href: "/resume.pdf", isExternal: true },
+  { id: "contact", label: "Contact", href: "#contact" }
+];
 
 export default function SiteNavbar() {
   const [activeId, setActiveId] = useState("home");
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const sections = navigationLinks
-      .map((link) => document.getElementById(link.id))
+    const sections = ["home", "case-studies", "experience", "about", "contact"]
+      .map((id) => document.getElementById(id))
       .filter(Boolean);
 
     const observer = new IntersectionObserver(
@@ -50,20 +56,22 @@ export default function SiteNavbar() {
             </span>
             <div>
               <p className="text-sm font-semibold tracking-[-0.02em] text-slate-950">Harshit</p>
-              <p className="text-xs text-slate-500">Associate Product Manager</p>
+              <p className="text-xs text-slate-500 font-medium">Associate Product Manager</p>
             </div>
           </a>
 
           <nav className="hidden items-center gap-2 md:flex">
-            {navigationLinks.map((link) => {
+            {customLinks.map((link) => {
               const active = activeId === link.id;
 
               return (
                 <a
                   key={link.id}
-                  href={`#${link.id}`}
+                  href={link.href}
+                  target={link.isExternal ? "_blank" : undefined}
+                  rel={link.isExternal ? "noopener noreferrer" : undefined}
                   aria-current={active ? "page" : undefined}
-                  className={`rounded-full px-4 py-2 text-sm font-medium ${
+                  className={`rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-wider ${
                     active
                       ? "bg-slate-950 text-white"
                       : "text-slate-600 hover:bg-slate-100 hover:text-slate-950"
@@ -93,15 +101,17 @@ export default function SiteNavbar() {
         >
           <div className="surface-card p-3">
             <nav className="flex flex-col gap-1">
-              {navigationLinks.map((link) => {
+              {customLinks.map((link) => {
                 const active = activeId === link.id;
 
                 return (
                   <a
                     key={link.id}
-                    href={`#${link.id}`}
+                    href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`rounded-2xl px-4 py-3 text-sm font-medium ${
+                    target={link.isExternal ? "_blank" : undefined}
+                    rel={link.isExternal ? "noopener noreferrer" : undefined}
+                    className={`rounded-2xl px-4 py-3 text-sm font-semibold uppercase tracking-wider ${
                       active
                         ? "bg-slate-950 text-white"
                         : "text-slate-600 hover:bg-slate-50 hover:text-slate-950"
